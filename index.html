@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P.S.Y. — The Party of One</title>
+<meta name="description" content="P.S.Y. (Psychological Strategic Yield) — the only political party honest about what political parties are. Satire, performance art, and disclosed influence. Join free. Consent collected, not assumed.">
+<meta property="og:title" content="P.S.Y. — The Party of One">
+<meta property="og:description" content="The only political party honest about what political parties are. Every party pulls the strings. We label them.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://psy-party.netlify.app/">
+<style>
+:root{
+  --navy:#0B1B33; --navy2:#0F2547; --red:#C8322B; --cream:#F6F1E7; --cream2:#EFE7D6;
+  --gold:#B98900; --purple:#8C4CBF; --ink:#14213A; --line:rgba(11,27,51,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+h1,h2,h3,.sans{font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+
+/* ── disclosure ticker ── */
+.ticker{background:var(--navy);color:var(--cream);overflow:hidden;white-space:nowrap;border-bottom:3px solid var(--red)}
+.ticker-inner{display:inline-block;padding:8px 0;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;animation:tick 55s linear infinite}
+.ticker-inner span{margin-right:48px}
+.ticker-inner em{color:var(--gold);font-style:normal}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.ticker-inner{animation:none;white-space:normal;padding:8px 16px}}
+
+/* ── nav ── */
+nav{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav-in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.nav-mark{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;letter-spacing:.22em;font-size:18px;color:var(--navy);text-decoration:none}
+.nav-mark b{color:var(--red)}
+nav a.lnk{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);text-decoration:none;opacity:.75}
+nav a.lnk:hover{opacity:1;color:var(--red)}
+.nav-join{margin-left:auto;background:var(--red);color:#fff !important;padding:8px 18px;font-weight:700;opacity:1 !important;text-decoration:none;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.nav-join:hover{background:#a5241e}
+
+/* ── hero ── */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);color:var(--cream);text-align:center;padding:72px 20px 84px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(140,76,191,.28),transparent 60%);pointer-events:none}
+.emblem{width:150px;height:150px;margin:0 auto 26px;display:block}
+.hero h1{font-size:clamp(44px,8vw,84px);font-weight:900;letter-spacing:.16em;line-height:1.05}
+.hero h1 span{color:var(--red)}
+.hero .expand{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-top:10px;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.hero .motto{font-size:clamp(19px,3vw,26px);font-style:italic;max-width:640px;margin:26px auto 8px;color:var(--cream2)}
+.hero .sub{font-size:15px;color:rgba(246,241,231,.72);max-width:560px;margin:0 auto}
+.hero-ctas{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-block;padding:15px 34px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:2px solid transparent}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#a5241e}
+.btn-ghost{border-color:var(--cream);color:var(--cream)}.btn-ghost:hover{border-color:var(--purple);color:#d9c2f2}
+.hero .paidfor{margin-top:34px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,241,231,.5);font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+
+/* ── sections ── */
+section{padding:72px 20px}
+.wrap{max-width:880px;margin:0 auto}
+.wrap-wide{max-width:1080px;margin:0 auto}
+.kicker{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+h2{font-size:clamp(30px,5vw,44px);font-weight:900;color:var(--navy);letter-spacing:.01em;line-height:1.12;margin-bottom:22px}
+.lede{font-size:19px;max-width:720px}
+.lede + .lede{margin-top:14px}
+.fine{font-size:13.5px;color:#5a5f4a;opacity:.75;margin-top:16px;font-style:italic}
+
+/* thesis table */
+.thesis-table{width:100%;border-collapse:collapse;margin-top:34px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:15px;background:#fff;box-shadow:0 2px 0 var(--line)}
+.thesis-table th,.thesis-table td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.thesis-table th{background:var(--navy);color:var(--cream);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.thesis-table th:last-child{background:var(--red)}
+.thesis-table td:first-child{font-weight:700;color:var(--navy);width:26%}
+.thesis-table td:last-child{color:var(--navy);font-weight:600}
+.tt-scroll{overflow-x:auto}
+
+/* planks */
+.planks{background:var(--navy);color:var(--cream)}
+.planks h2{color:var(--cream)}
+.planks .kicker{color:var(--gold)}
+.plank-list{margin-top:30px;counter-reset:plank}
+.plank{border-top:1px solid rgba(246,241,231,.18);padding:22px 0;display:flex;gap:22px;align-items:baseline}
+.plank:last-child{border-bottom:1px solid rgba(246,241,231,.18)}
+.plank .n{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:14px;color:var(--gold);letter-spacing:.1em;min-width:70px}
+.plank h3{font-size:21px;color:var(--cream);margin-bottom:4px}
+.plank p{font-size:15px;color:rgba(246,241,231,.75)}
+
+/* doctrine cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:34px}
+.card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--red);padding:26px 24px}
+.card:nth-child(2){border-top-color:var(--gold)}
+.card:nth-child(3){border-top-color:var(--purple)}
+.card h3{font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.card p{font-size:15px}
+.card .tag{display:inline-block;margin-top:14px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+
+/* pillars */
+.pillars{background:var(--cream2)}
+.pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:34px}
+.pillar{background:#fff;border:1px solid var(--line);padding:24px;position:relative}
+.pillar .glyph{font-size:22px;position:absolute;top:20px;right:20px}
+.pillar h3{font-size:18px;color:var(--navy);letter-spacing:.04em;margin-bottom:2px}
+.pillar .aka{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pillar p{font-size:14.5px}
+.pillar p em{color:var(--red);font-style:normal;font-weight:700}
+
+/* broadcast */
+.broadcast{background:#000;color:var(--cream);text-align:center}
+.broadcast .tv{max-width:660px;margin:0 auto;border:1px solid rgba(246,241,231,.25);padding:52px 34px;position:relative}
+.broadcast .tv::before{content:"● REC";position:absolute;top:14px;left:16px;color:var(--red);font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;letter-spacing:.2em}
+.broadcast .tv::after{content:"PAID PROGRAMMING";position:absolute;top:14px;right:16px;color:rgba(246,241,231,.45);font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;letter-spacing:.2em}
+.broadcast p.line1{font-size:clamp(22px,4vw,32px);font-style:italic;line-height:1.4}
+.broadcast p.line2{margin-top:20px;font-size:15px;color:rgba(246,241,231,.65)}
+.broadcast p.paid{margin-top:30px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+
+/* membership */
+.member-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:34px}
+.role{background:#fff;border:1px solid var(--line);padding:26px 24px}
+.role h3{color:var(--navy);font-size:18px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.role h3 span{color:var(--red)}
+.role p{font-size:15px}
+.rank-note{margin-top:30px;background:var(--navy);color:var(--cream);padding:26px 28px;font-size:17px;border-left:6px solid var(--gold)}
+.rank-note b{color:var(--gold)}
+
+/* join form */
+.join{background:var(--red);color:#fff}
+.join h2{color:#fff}
+.join .kicker{color:#ffd9d6}
+.join .lede{color:#ffeceb}
+form.join-form{margin-top:34px;max-width:560px}
+.jf-row{margin-bottom:16px}
+.jf-row label{display:block;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px;color:#ffd9d6}
+.jf-row input[type=text],.jf-row input[type=email],.jf-row select{width:100%;padding:13px 14px;border:none;font-size:16px;font-family:Georgia,serif;background:#fff;color:var(--ink)}
+.consent{display:flex;gap:12px;align-items:flex-start;background:rgba(11,27,51,.25);padding:16px;margin:20px 0;font-size:14px;line-height:1.5}
+.consent input{margin-top:4px;width:18px;height:18px;flex-shrink:0}
+.join button{background:var(--navy);color:var(--cream);border:none;padding:16px 40px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:15px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.join button:hover{background:#08142a}
+.join .escape{margin-top:18px;font-size:13px;color:#ffd9d6}
+.join .escape a{color:#fff}
+
+/* inner party */
+.inner{background:var(--navy);color:var(--cream)}
+.inner h2{color:var(--cream)}
+.inner .kicker{color:var(--purple)}
+.inner .lede{color:rgba(246,241,231,.85)}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:34px}
+.tier{border:1px solid rgba(246,241,231,.22);padding:26px 24px;background:rgba(15,37,71,.6)}
+.tier.hot{border-color:var(--purple);box-shadow:0 0 34px rgba(140,76,191,.25)}
+.tier h3{font-size:17px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.tier .price{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:26px;color:var(--gold);margin-bottom:12px}
+.tier p{font-size:14.5px;color:rgba(246,241,231,.8)}
+.tier a{display:inline-block;margin-top:16px;color:#d9c2f2;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--purple)}
+.tier a:hover{color:#fff}
+.inner .safeword{margin-top:30px;font-size:14px;color:rgba(246,241,231,.65)}
+.inner .safeword b{color:var(--gold)}
+
+/* machine strip */
+.machine-strip{background:var(--cream2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.machine-strip .wrap{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+.machine-strip .txt{flex:1;min-width:260px}
+.machine-strip h2{font-size:26px;margin-bottom:10px}
+.machine-strip p{font-size:15px}
+.btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:#08142a}
+
+/* footer */
+footer{background:var(--navy);color:rgba(246,241,231,.7);padding:56px 20px;font-size:13px}
+footer .wrap-wide{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
+footer h4{font-family:-apple-system,'Segoe UI',Arial,sans-serif;color:var(--cream);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+footer a{color:#d9c2f2;text-decoration:none}
+footer a:hover{color:#fff}
+footer li{list-style:none;margin-bottom:8px}
+footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(246,241,231,.15);font-size:12px;line-height:1.7;color:rgba(246,241,231,.55)}
+@media(max-width:760px){footer .wrap-wide{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- DISCLOSURE TICKER — the disclosure IS the brand -->
+<div class="ticker" aria-label="Disclosure ticker">
+  <div class="ticker-inner">
+    <span>★ THIS IS SATIRE AND PERFORMANCE ART</span><span><em>P.S.Y. IS NOT A REGISTERED POLITICAL PARTY</em></span><span>WE DO NOT RUN CANDIDATES</span><span>WE DO NOT ACCEPT POLITICAL CONTRIBUTIONS</span><span><em>EVERY PARTY USES THESE TECHNIQUES — WE LABEL OURS</em></span><span>CONSENT IS COLLECTED BELOW, NOT ASSUMED</span><span>YOU CAN LEAVE AT ANY TIME — THE DOOR IS UNLOCKED AND CLEARLY MARKED</span>
+    <span>★ THIS IS SATIRE AND PERFORMANCE ART</span><span><em>P.S.Y. IS NOT A REGISTERED POLITICAL PARTY</em></span><span>WE DO NOT RUN CANDIDATES</span><span>WE DO NOT ACCEPT POLITICAL CONTRIBUTIONS</span><span><em>EVERY PARTY USES THESE TECHNIQUES — WE LABEL OURS</em></span><span>CONSENT IS COLLECTED BELOW, NOT ASSUMED</span><span>YOU CAN LEAVE AT ANY TIME — THE DOOR IS UNLOCKED AND CLEARLY MARKED</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <a class="nav-mark" href="#top">P.<b>S.</b>Y.</a>
+    <a class="lnk" href="#thesis">The Honest Party</a>
+    <a class="lnk" href="#platform">Platform</a>
+    <a class="lnk" href="#pillars">The Six Strings</a>
+    <a class="lnk" href="#inner">Inner Party</a>
+    <a class="lnk" href="machine.html">The Machine</a>
+    <a class="nav-join" href="#join">Join Free</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <!-- Party emblem: pyramid, one star. The Party of One. -->
+  <svg class="emblem" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="P.S.Y. party emblem: a pyramid beneath a single star">
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#B98900" stroke-width="2.5"/>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="#F6F1E7" stroke-width="1" opacity=".5"/>
+    <path d="M100 52 L152 148 L48 148 Z" fill="none" stroke="#8C4CBF" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M100 82 L128 134 L72 134 Z" fill="#8C4CBF" opacity=".35"/>
+    <path d="M100 26 l4.7 9.6 10.6 1.5 -7.7 7.5 1.8 10.5 -9.4 -5 -9.4 5 1.8 -10.5 -7.7 -7.5 10.6 -1.5 Z" fill="#C8322B"/>
+    <text x="100" y="172" text-anchor="middle" fill="#F6F1E7" font-family="Arial, sans-serif" font-size="11" letter-spacing="3">THE PARTY OF ONE</text>
+  </svg>
+  <h1>P.<span>S.</span>Y.</h1>
+  <div class="expand">Psychological Strategic Yield</div>
+  <p class="motto">"Ordered liberty, through the freedom to choose. Or want."</p>
+  <p class="sub">The acronym stands for whatever it needs to. Currently: Psychological Strategic Yield. This is disclosed, like everything else.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-red" href="#join">Join the Party — Free</a>
+    <a class="btn btn-ghost" href="#inner">Get Psyoped — Paid</a>
+  </div>
+  <div class="paidfor">Ad paid for by Psy-Opt-In · Consent NOT assumed by continued viewing — we collect it properly below</div>
+</header>
+
+<!-- THESIS -->
+<section id="thesis">
+  <div class="wrap">
+    <div class="kicker">Our Founding Insight</div>
+    <h2>The only political party that's honest about what political parties are.</h2>
+    <p class="lede">Every political party on Earth runs the same machine: an identity to wear, a tribe to belong to, rituals to perform, an enemy to fear, a doctrine to recite, and a set of psychological techniques to keep you donating, voting, and forwarding emails to your uncle.</p>
+    <p class="lede">They will never tell you this. <strong>We just did.</strong> That's the whole party.</p>
+    <div class="tt-scroll">
+    <table class="thesis-table">
+      <thead><tr><th>The Machine</th><th>Other Parties</th><th>P.S.Y.</th></tr></thead>
+      <tbody>
+        <tr><td>Identity</td><td>Sold as your true self</td><td>Issued as a costume, labeled COSTUME</td></tr>
+        <tr><td>Belonging</td><td>Conditional on loyalty</td><td>Free, revocable by you, no exit interview</td></tr>
+        <tr><td>Ritual</td><td>Solemn, mandatory</td><td>Absurd, optional, honestly quite fun</td></tr>
+        <tr><td>Enemy</td><td>Your neighbor</td><td>Undisclosed manipulation (the actual one)</td></tr>
+        <tr><td>Doctrine</td><td>Eternal, non-negotiable</td><td>Temporary, reversible upon better argument</td></tr>
+        <tr><td>Influence techniques</td><td>Used on you, secretly</td><td>Used on you, with a signed permission slip</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="planks" id="platform">
+  <div class="wrap">
+    <div class="kicker">The Obvious Platform</div>
+    <h2>We hold these truths to be self-evident. Literally. That's the platform.</h2>
+    <div class="plank-list">
+      <div class="plank"><div class="n">ART. I</div><div><h3>Traffic should move.</h3><p>We have no plan to achieve this. Neither does anyone else. We are the only ones admitting it.</p></div></div>
+      <div class="plank"><div class="n">ART. II</div><div><h3>Food should be mostly food.</h3><p>Position paper available upon request. It is one sentence long. It is this sentence.</p></div></div>
+      <div class="plank"><div class="n">ART. III</div><div><h3>Meetings that could be emails shall be emails.</h3><p>The party's first, and so far only, legislative priority.</p></div></div>
+      <div class="plank"><div class="n">ART. IV</div><div><h3>Scam calls should not work on you.</h3><p>The one plank we actually built infrastructure for. See: <a href="https://psyoptin.com" style="color:#d9c2f2">the training temple</a>.</p></div></div>
+      <div class="plank"><div class="n">ART. V</div><div><h3>Your attention belongs to you.</h3><p>We intend to earn some of it and then give it back in better condition than we found it.</p></div></div>
+      <div class="plank"><div class="n">ART. VI</div><div><h3>All beliefs above are reversible upon presentation of a better argument.</h3><p>This is our strongest-held belief. It is also reversible. We're aware of the problem and consider it a feature.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTRINE -->
+<section id="doctrine">
+  <div class="wrap">
+    <div class="kicker">Party Doctrine</div>
+    <h2>Three tenets. Held loosely, on purpose.</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>I. The Doctrine of No Doctrine</h3>
+        <p>All party beliefs are temporary and reversible. Certainty is the first string they pull on you; we simply refuse to hand anyone the string. Including ourselves.</p>
+        <span class="tag">Believe accordingly (or don't)</span>
+      </div>
+      <div class="card">
+        <h3>II. Radical Honesty About Ordinary Life</h3>
+        <p>Politics pretends every issue is an emergency. Most of life is traffic, dinner, and unanswered texts. We campaign on the world as it actually is: obvious.</p>
+        <span class="tag">See Articles I–VI</span>
+      </div>
+      <div class="card">
+        <h3>III. Disclosed Influence</h3>
+        <p>We use real psychological influence techniques on our own members — on purpose, out loud, with permission. Call it political therapy. Call it performance art. Every string we pull has a label on it.</p>
+        <span class="tag">The ingredients are on the box</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIX PILLARS / STRINGS -->
+<section class="pillars" id="pillars">
+  <div class="wrap-wide">
+    <div class="kicker">The Six Strings</div>
+    <h2>Every party pulls these. We put labels on ours.</h2>
+    <p class="lede">These are the six strings attached to every citizen of every persuasion. Other parties pull them quietly. P.S.Y. pulls them while narrating what it's doing, which turns out to be excellent practice for noticing when someone else does it quietly.</p>
+    <div class="pillar-grid">
+      <div class="pillar"><span class="glyph" style="color:#4C6FBF">◆</span><h3>The Podium</h3><div class="aka">Authority Deference</div><p>Someone in a suit says it, so it must be true. <em>Feel that?</em> That's the string. Our suits are clearly labeled "SUIT."</p></div>
+      <div class="pillar"><span class="glyph" style="color:#B98900">◎</span><h3>The Crowd</h3><div class="aka">Consensus Pull</div><p>Everyone is joining. You'll be left behind. <em>You won't.</em> There is no behind. But notice how that sentence felt for a second.</p></div>
+      <div class="pillar"><span class="glyph" style="color:#E1442E">▲</span><h3>The Clock</h3><div class="aka">Urgency Reflex</div><p>ACT NOW. BEFORE MIDNIGHT. <em>There is no deadline.</em> There was never a deadline. Membership will still be free on Thursday.</p></div>
+      <div class="pillar"><span class="glyph" style="color:#2F9E77">■</span><h3>The Confession</h3><div class="aka">Disclosure Drift</div><p>Tell us a little about yourself. Then a little more. <em>Notice the slope.</em> We ask for one email address and we say why.</p></div>
+      <div class="pillar"><span class="glyph" style="color:#8C4CBF">✦</span><h3>The Badge</h3><div class="aka">Identity Hooks</div><p>You're one of US now. <em>Us is a costume here</em> — which is exactly why you'll start noticing what "us" costs everywhere else.</p></div>
+      <div class="pillar"><span class="glyph" style="color:#C2622E">⟳</span><h3>The Ladder</h3><div class="aka">Commitment Momentum</div><p>You've read this far. Might as well join. <em>See what we did there?</em> We'll do it again at the bottom of the page, with a label on it.</p></div>
+    </div>
+    <p class="fine" style="margin-top:26px">Want to actually train against these six? That's the parent operation: <a href="https://psyoptin.com" style="color:var(--red)">Psy-Opt-In — see the strings, learn to cut them</a>.</p>
+  </div>
+</section>
+
+<!-- BROADCAST -->
+<section class="broadcast">
+  <div class="tv">
+    <p class="line1">"Join the P.S.Y. political party today. The Party of One. A focus on ordered liberty through the freedom to choose — or want."</p>
+    <p class="line2">Welcome to The Party of One.</p>
+    <p class="paid">Ad paid for by Psy-Opt-In · Consent assumed by continued viewing*</p>
+    <p style="margin-top:14px;font-size:11px;color:rgba(246,241,231,.4);font-family:Arial,sans-serif">*It isn't. That's the joke. Real consent is collected one section down, with a checkbox and an exit door.</p>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+  <div class="wrap">
+    <div class="kicker">Membership</div>
+    <h2>Pick your role in the machine.</h2>
+    <p class="lede">Membership is free forever. The party needs three kinds of people, and you can switch whenever you like — doctrine is reversible, remember.</p>
+    <div class="member-cols">
+      <div class="role"><h3>The <span>Target</span></h3><p>You enjoy being worked on. You want influence attempts run at you — disclosed, consensual, brain-twisting — so the real ones bounce off. The party's most honored role.</p></div>
+      <div class="role"><h3>The <span>Operator</span></h3><p>You want to learn how the strings are pulled and practice pulling them — only on willing Targets, only inside the rules. Great power, mandatory disclosure.</p></div>
+      <div class="role"><h3>The <span>Citizen</span></h3><p>You just want to do visible good under an absurd banner. Park cleanups, neighbor help, small kindnesses — stamped with the pyramid. Confusing to witnesses. Excellent for morale.</p></div>
+    </div>
+    <div class="rank-note">
+      Every member holds the rank of <b>MEMBER ONE</b>. It is the Party of One. There is no Member Two. Promotions are therefore impossible, which keeps the party remarkably free of ambition-related incidents.
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="kicker">Enrollment</div>
+    <h2>Join the Party of One.</h2>
+    <p class="lede">This is The Ladder (⟳ Commitment Momentum) and The Badge (✦ Identity Hooks) working together, as disclosed above. Knowing that, and joining anyway because it sounds fun, is the most P.S.Y. thing you can possibly do.</p>
+    <form class="join-form" name="join" method="POST" action="/welcome.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="join">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="jf-row">
+        <label for="jname">Name or Alias (optional — the party respects a good alias)</label>
+        <input type="text" id="jname" name="name" placeholder="Citizen Obvious">
+      </div>
+      <div class="jf-row">
+        <label for="jemail">Email (required — this is the one thing we actually ask for)</label>
+        <input type="email" id="jemail" name="email" required placeholder="you@example.com">
+      </div>
+      <div class="jf-row">
+        <label for="jrole">Chosen Role</label>
+        <select id="jrole" name="role">
+          <option value="target">The Target — run your techniques on me</option>
+          <option value="operator">The Operator — teach me the strings</option>
+          <option value="citizen">The Citizen — good deeds, absurd banner</option>
+          <option value="undecided">Undecided — doctrine says that's fine</option>
+        </select>
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="consent" value="explicit-opt-in" required>
+        <span><strong>Explicit opt-in:</strong> I understand P.S.Y. is satire and performance art, and I consent to receive party communications that openly use influence techniques on me for entertainment and self-awareness. Every message includes an unsubscribe link. Leaving is one click and nobody will guilt me about it, because guilt-tripping the departed is an Other Parties move.</span>
+      </label>
+      <button type="submit">Enroll Me — Member One</button>
+      <p class="escape">Not ready? Correct instinct. Come back Thursday — there is no deadline. Or just go <a href="https://psyoptin.com">train against this exact page</a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- INNER PARTY -->
+<section class="inner" id="inner">
+  <div class="wrap-wide">
+    <div class="kicker">The Inner Party</div>
+    <h2>Pay to be the target.</h2>
+    <p class="lede">The free party is theater. The Inner Party is the real experience: consensual psychological operations, run on you, by professionals* — then decoded so you can see exactly how it worked. (*A very committed operator and an unreasonable amount of AI.)</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>The Line</h3>
+        <div class="price">Free to start</div>
+        <p>Call the party switchboard and survive a live social-engineering character. Say the safeword to end it. Beat them and earn your file.</p>
+        <a href="tel:+12515014159">Call +1 (251) 501-4159</a>
+      </div>
+      <div class="tier hot">
+        <h3>Permission to Scam Me</h3>
+        <div class="price">The signature act</div>
+        <p>Sign the manifesto. Grant the party written permission to run an influence attempt on you when you least expect it. Survive, and your name goes on the Wall of the Unscammable.</p>
+        <a href="https://psyoptin.com/permission">Sign the permission slip</a>
+      </div>
+      <div class="tier">
+        <h3>The Training Temple</h3>
+        <div class="price">$7.99/mo</div>
+        <p>Full Psy-Opt-In access: six worlds of simulated manipulation, the AI companion who's too good to you, the X-Ray debriefs. Become the member no party can use.</p>
+        <a href="https://psyoptin.com">Enter Psy-Opt-In</a>
+      </div>
+    </div>
+    <p class="safeword">House rules, always: fiction only · PG only · explicit opt-in before anything touches the real world · the safeword is <b>CUT THE STRINGS</b> and it always, instantly works. Revoking permission is one click. This paragraph is not satire.</p>
+  </div>
+</section>
+
+<!-- THE MACHINE STRIP -->
+<section class="machine-strip">
+  <div class="wrap">
+    <div class="txt">
+      <div class="kicker">Full Disclosure, Continued</div>
+      <h2>This entire political party is run by one operator and an AI stack.</h2>
+      <p>Website, membership pipeline, email program, phone line, payment rails, weekly content — a one-person party with big-party infrastructure. If you run an <em>actual</em> campaign and want machinery like this, we sell it.</p>
+    </div>
+    <a class="btn btn-navy" href="machine.html">See the Machine</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide">
+    <div>
+      <h4>P.S.Y. — The Party of One</h4>
+      <p>A satirical political party and consensual psychological playground by <a href="https://psyoptin.com">Psy-Opt-In</a>. The only party honest about what parties are. Every string labeled. Every door unlocked.</p>
+    </div>
+    <div>
+      <h4>The Party</h4>
+      <ul>
+        <li><a href="#platform">The Obvious Platform</a></li>
+        <li><a href="#pillars">The Six Strings</a></li>
+        <li><a href="#join">Join Free</a></li>
+        <li><a href="machine.html">The Machine (services)</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>The Operation</h4>
+      <ul>
+        <li><a href="https://psyoptin.com">Psy-Opt-In</a></li>
+        <li><a href="https://psyoptin.com/permission">Permission to Scam Me</a></li>
+        <li><a href="https://psyoptin.com/wall.html">Wall of the Unscammable</a></li>
+        <li><a href="https://psyoptin.com/privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="legal">
+    P.S.Y. ("Psychological Strategic Yield") is a work of satire, parody, and performance art operated by Psy-Opt-In. It is <strong>not a registered political party</strong>, not a political committee, and not affiliated with any government, party, or candidate. We do not nominate or endorse candidates and we do not solicit or accept political contributions; any payments are for entertainment services, training subscriptions, or merchandise. All psychological experiences are fictional, consent-gated, and PG. We never contact anyone who hasn't explicitly opted in, every message carries a working unsubscribe, and the safeword — CUT THE STRINGS — always works. We never sell personal information. Real-world member activities under the party banner must be legal, positive, and kind; the pyramid does not cover crimes. "Consent assumed by continued viewing" is a joke about advertising, not our policy — our policy is the checkbox.
+  </div>
+</footer>
+
+</body>
+</html>

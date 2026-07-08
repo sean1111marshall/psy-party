@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome, Member One — P.S.Y.</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--navy:#0B1B33;--navy2:#0F2547;--red:#C8322B;--cream:#F6F1E7;--gold:#B98900;--purple:#8C4CBF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 20px;line-height:1.6}
+.cardw{max-width:640px;text-align:center}
+.emblem{width:110px;height:110px;margin:0 auto 22px;display:block}
+.kicker{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+h1{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:clamp(30px,6vw,46px);font-weight:900;line-height:1.1;margin-bottom:18px}
+h1 span{color:var(--red)}
+p{font-size:17px;color:rgba(246,241,231,.85);margin-bottom:14px}
+.assignment{margin:28px 0;border:1px solid rgba(246,241,231,.25);border-left:5px solid var(--purple);padding:22px 24px;text-align:left;background:rgba(15,37,71,.5)}
+.assignment .h{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.assignment p{font-size:16px;margin:0}
+a.btn{display:inline-block;margin:8px 6px 0;padding:13px 28px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--cream);border:2px solid var(--cream)}
+a.btn:hover{border-color:var(--purple);color:#d9c2f2}
+a.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.fine{margin-top:26px;font-size:12.5px;color:rgba(246,241,231,.5)}
+</style>
+</head>
+<body>
+<div class="cardw">
+  <svg class="emblem" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="P.S.Y. emblem">
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#B98900" stroke-width="2.5"/>
+    <path d="M100 52 L152 148 L48 148 Z" fill="none" stroke="#8C4CBF" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M100 82 L128 134 L72 134 Z" fill="#8C4CBF" opacity=".35"/>
+    <path d="M100 26 l4.7 9.6 10.6 1.5 -7.7 7.5 1.8 10.5 -9.4 -5 -9.4 5 1.8 -10.5 -7.7 -7.5 10.6 -1.5 Z" fill="#C8322B"/>
+  </svg>
+  <div class="kicker" id="kick">Enrollment Confirmed</div>
+  <h1 id="head">Welcome, <span>Member One</span>.</h1>
+  <p id="body1">You now hold the party's only rank. There is no Member Two, so congratulations on reaching the top. The costume is yours; the label is sewn on the outside, as required.</p>
+  <div class="assignment" id="assign">
+    <div class="h">First Standing Order</div>
+    <p>Today, notice <strong>one</strong> attempt to influence you — an ad, a headline, a guilt trip, a limited-time offer. Don't resist it. Just see the string. That's the entire assignment. That's the entire party.</p>
+  </div>
+  <a class="btn red" href="https://psyoptin.com">Train at the Temple</a>
+  <a class="btn" href="tel:+12515014159">Call The Line</a>
+  <a class="btn" href="index.html">Back to the Party</a>
+  <p class="fine">Changed your mind already? Perfectly doctrinal. Every email we ever send has a one-click unsubscribe, and the safeword — CUT THE STRINGS — always works.</p>
+</div>
+<script>
+if(new URLSearchParams(location.search).get('from')==='machine'){
+  document.getElementById('kick').textContent='Briefing Requested';
+  document.getElementById('head').innerHTML='Received. <span>Teardown incoming.</span>';
+  document.getElementById('body1').textContent='The operator will look at your current digital setup and reply with a short, specific teardown — what’s leaking, what’s missing, what week one fixes. No deck, no discovery-call theater.';
+  document.getElementById('assign').style.display='none';
+}
+</script>
+</body>
+</html>

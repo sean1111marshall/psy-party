@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Machine — Campaign Infrastructure by the P.S.Y. Operator</title>
+<meta name="description" content="This entire political party — site, membership pipeline, email program, phone line, payments, content — is run by one operator and an AI stack. We build the same machine for real campaigns. One offer: $10,000/month, fixed scope.">
+<link rel="canonical" href="https://psy-party.netlify.app/machine.html">
+<style>
+:root{
+  --navy:#0B1B33; --navy2:#0F2547; --red:#C8322B; --cream:#F6F1E7; --cream2:#EFE7D6;
+  --gold:#B98900; --purple:#8C4CBF; --ink:#14213A; --line:rgba(11,27,51,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+h1,h2,h3,.sans{font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+nav{background:var(--cream);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.nav-mark{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;letter-spacing:.22em;font-size:18px;color:var(--navy);text-decoration:none}
+.nav-mark b{color:var(--red)}
+nav a.lnk{margin-left:auto;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);text-decoration:none;opacity:.75}
+nav a.lnk:hover{opacity:1;color:var(--red)}
+.hero{background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--cream);padding:70px 20px;text-align:center}
+.hero .kicker{color:var(--gold)}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:900;line-height:1.1;max-width:820px;margin:0 auto 18px}
+.hero p{max-width:640px;margin:0 auto;font-size:18px;color:rgba(246,241,231,.85)}
+.kicker{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+section{padding:64px 20px}
+.wrap{max-width:880px;margin:0 auto}
+h2{font-size:clamp(26px,4.5vw,38px);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:20px}
+.lede{font-size:18px;max-width:720px}
+.inventory{margin-top:32px;border-top:1px solid var(--line)}
+.inv-row{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.inv-row .what{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:15px;color:var(--navy);min-width:220px;letter-spacing:.02em}
+.inv-row .how{font-size:15px;flex:1}
+@media(max-width:640px){.inv-row{flex-direction:column;gap:4px}}
+.offer{background:var(--navy);color:var(--cream)}
+.offer h2{color:var(--cream)}
+.offer .kicker{color:var(--gold)}
+.offer .price{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:clamp(40px,7vw,64px);font-weight:900;color:var(--gold);margin:18px 0 6px}
+.offer .price small{font-size:18px;color:rgba(246,241,231,.7);font-weight:600}
+.offer ul{margin:26px 0 0;padding:0;list-style:none}
+.offer li{padding:12px 0 12px 34px;border-bottom:1px solid rgba(246,241,231,.15);position:relative;font-size:16px}
+.offer li::before{content:"★";position:absolute;left:4px;color:var(--red)}
+.offer .not{margin-top:24px;font-size:14px;color:rgba(246,241,231,.6);font-style:italic}
+.why{background:var(--cream2)}
+.why .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+.why .card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--red);padding:24px}
+.why .card:nth-child(2){border-top-color:var(--gold)}
+.why .card:nth-child(3){border-top-color:var(--purple)}
+.why .card h3{font-size:16px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin-bottom:8px}
+.why .card p{font-size:14.5px}
+.brief{background:var(--red);color:#fff}
+.brief h2{color:#fff}
+.brief .kicker{color:#ffd9d6}
+.brief .lede{color:#ffeceb}
+form{margin-top:30px;max-width:560px}
+.f-row{margin-bottom:16px}
+.f-row label{display:block;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px;color:#ffd9d6}
+.f-row input,.f-row select,.f-row textarea{width:100%;padding:13px 14px;border:none;font-size:16px;font-family:Georgia,serif;background:#fff;color:var(--ink)}
+.f-row textarea{min-height:110px;resize:vertical}
+button{background:var(--navy);color:var(--cream);border:none;padding:16px 40px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:15px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+button:hover{background:#08142a}
+.brief .fine{margin-top:16px;font-size:13px;color:#ffd9d6}
+footer{background:var(--navy);color:rgba(246,241,231,.6);padding:36px 20px;text-align:center;font-size:12.5px;line-height:1.7}
+footer a{color:#d9c2f2;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="nav-mark" href="index.html">P.<b>S.</b>Y.</a>
+    <a class="lnk" href="index.html">← Back to the Party</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">The Machine</div>
+  <h1>Everything you just saw is run by one operator and an AI stack.</h1>
+  <p>The P.S.Y. party is satire. Its infrastructure is not. The site, the membership pipeline, the email program, the live phone line, the payment rails, the content cadence — designed, built, and operated by a one-person shop. This page is the sales pitch, disclosed as a sales pitch, per house style.</p>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The Inventory</div>
+    <h2>What "big-party infrastructure" means here — all of it live, all of it solo-operated.</h2>
+    <div class="inventory">
+      <div class="inv-row"><div class="what">Website + landing pages</div><div class="how">Fast static pages, built and shipped in hours, not agency-weeks. You are reading one right now.</div></div>
+      <div class="inv-row"><div class="what">Membership / supporter pipeline</div><div class="how">Opt-in capture with real consent language, suppression lists, and one-click unsubscribe — the compliance part done right from day one.</div></div>
+      <div class="inv-row"><div class="what">Email program</div><div class="how">Domain-authenticated sending (SPF/DKIM/DMARC aligned) that lands in the inbox, not spam — plus automated welcome and follow-up sequences.</div></div>
+      <div class="inv-row"><div class="what">Live phone + SMS line</div><div class="how">An AI voice line that answers, routes, converses in character, captures leads, and emails follow-ups. Call the party switchboard and see.</div></div>
+      <div class="inv-row"><div class="what">Payment rails</div><div class="how">Stripe checkout with automated fulfillment and webhook verification — money in, product delivered, no human in the loop.</div></div>
+      <div class="inv-row"><div class="what">Content engine</div><div class="how">AI-generated video, imagery, and copy on a weekly cadence — a content department's output at a freelancer's cost structure.</div></div>
+      <div class="inv-row"><div class="what">Analytics</div><div class="how">Self-hosted, cookieless visitor and conversion tracking. Know what's working without a vendor tax or a privacy scandal.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <div class="kicker">The Offer — there is exactly one</div>
+    <h2>Campaign Digital Infrastructure Retainer</h2>
+    <div class="price">$10,000<small>/month · fixed scope · no à la carte</small></div>
+    <ul>
+      <li><strong>Week one:</strong> your website, donation pipeline, and email/SMS program stood up end to end.</li>
+      <li><strong>Every week after:</strong> we operate it — content cadence, donor communications, landing pages for every push, list hygiene and compliance.</li>
+      <li><strong>The AI advantage:</strong> a two-person delivery footprint doing what legacy consultants staff ten people for — which is why the retainer is a fraction of their invoice.</li>
+      <li><strong>Proof:</strong> this entire party — theater and machinery — is the demo. Kick every tire on it.</li>
+    </ul>
+    <p class="not">Not offered: strategy-deck theater, "brand discovery" months, or anything billed by the hour. We build and run the machine. You run the race.</p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="kicker">Why a satirical party is the portfolio</div>
+    <h2>Because a demo you can't fake beats a case study you can't verify.</h2>
+    <div class="cards">
+      <div class="card"><h3>It's live</h3><p>Every claim on this page is clickable, callable, or signable right now. No "results may vary" footnote — the machine is running in front of you.</p></div>
+      <div class="card"><h3>It's honest</h3><p>An operation whose entire brand is disclosed persuasion cannot afford sloppy consent, spammy sending, or dark patterns. Your compliance officer will like us.</p></div>
+      <div class="card"><h3>It's one person</h3><p>If one operator can run a whole (fake) party, a real campaign gets the same stack with room to spare. That's the cost structure you're buying.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="brief" id="briefing">
+  <div class="wrap">
+    <div class="kicker">Request a Briefing</div>
+    <h2>Running a real campaign or organization?</h2>
+    <p class="lede">Send the basics. You'll get back a short, specific teardown of your current digital setup — what's leaking, what's missing, what week one would fix. No deck. No discovery call theater.</p>
+    <form name="briefing" method="POST" action="/welcome.html?from=machine" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="briefing">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="f-row"><label for="bname">Your name</label><input type="text" id="bname" name="name" required></div>
+      <div class="f-row"><label for="bemail">Email</label><input type="email" id="bemail" name="email" required></div>
+      <div class="f-row"><label for="borg">Campaign / organization</label><input type="text" id="borg" name="organization" required></div>
+      <div class="f-row"><label for="brace">Office sought or mission (if applicable)</label><input type="text" id="brace" name="race"></div>
+      <div class="f-row"><label for="bsit">Current digital situation, in a sentence</label><textarea id="bsit" name="situation" placeholder="e.g., A volunteer built our site in 2022 and our email open rate is a mystery."></textarea></div>
+      <button type="submit">Request the Teardown</button>
+      <p class="fine">Your details go to the operator and nowhere else. No list, no spam, no follow-up sequence unless you become a client — lead-gen dark patterns would be terrible branding for us.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  The Machine is the professional-services arm of <a href="https://psyoptin.com">Psy-Opt-In</a>. Services are delivered to lawful campaigns and organizations; we decline work we can't serve well.
+  The satirical party upstairs is satire; this page is not. <a href="index.html">Return to the Party of One</a>.
+</footer>
+
+</body>
+</html>
