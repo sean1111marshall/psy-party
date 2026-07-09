@@ -232,6 +232,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .rec-card .meta{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11.5px;color:#6b7080;margin-top:2px;letter-spacing:.04em}
 .rec-empty{margin-top:30px;font-size:16px;font-style:italic}
 
+/* share — Consensus Pull, labeled */
+.sharebar{margin-top:28px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sharebar .sh-label{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-right:4px}
+.sh-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.sh-btn:hover{border-color:var(--red);color:var(--red)}
+.sh-btn.native{width:auto;border-radius:20px;padding:0 18px;background:var(--red);color:#fff;border-color:var(--red);letter-spacing:.06em}
+.sh-btn.native:hover{background:#a5241e;color:#fff}
+.dark-share .sh-btn{background:transparent;color:var(--cream);border-color:rgba(246,241,231,.35)}
+.dark-share .sh-btn:hover{border-color:var(--gold);color:var(--gold)}
+.dark-share .sh-btn.native{background:var(--red);color:#fff;border-color:var(--red)}
+.plank-share{background:none;border:none;color:var(--gold);font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.12em;cursor:pointer;padding:4px 0;margin-top:6px;text-transform:uppercase}
+.plank-share:hover{color:#fff}
+#sh-toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:var(--cream);padding:13px 22px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13.5px;z-index:300;opacity:0;transition:all .25s;pointer-events:none;border-left:4px solid var(--gold);max-width:90vw}
+#sh-toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
 /* footer */
 footer{background:var(--navy);color:rgba(246,241,231,.7);padding:56px 20px;font-size:13px}
 footer .wrap-wide{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
@@ -313,6 +328,7 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
       </tbody>
     </table>
     </div>
+    <div class="sharebar" data-text="Every political party runs the same machine: identity, tribe, ritual, enemy, doctrine, influence techniques. P.S.Y. is the only one that admits it. The Party of One." data-url="https://party.psyoptin.com/#thesis"></div>
   </div>
 </section>
 
@@ -322,12 +338,12 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
     <div class="kicker">The Obvious Platform</div>
     <h2>We hold these truths to be self-evident. Literally. That's the platform.</h2>
     <div class="plank-list">
-      <div class="plank"><div class="n">ART. I</div><div><h3>Traffic should move.</h3><p>We have no plan to achieve this. Neither does anyone else. We are the only ones admitting it.</p></div></div>
-      <div class="plank"><div class="n">ART. II</div><div><h3>Food should be mostly food.</h3><p>Position paper available upon request. It is one sentence long. It is this sentence.</p></div></div>
-      <div class="plank"><div class="n">ART. III</div><div><h3>Meetings that could be emails shall be emails.</h3><p>The party's first, and so far only, legislative priority.</p></div></div>
-      <div class="plank"><div class="n">ART. IV</div><div><h3>Scam calls should not work on you.</h3><p>The one plank we actually built infrastructure for. See: <a href="https://psyoptin.com" style="color:#d9c2f2">the training temple</a>.</p></div></div>
-      <div class="plank"><div class="n">ART. V</div><div><h3>Your attention belongs to you.</h3><p>We intend to earn some of it and then give it back in better condition than we found it.</p></div></div>
-      <div class="plank"><div class="n">ART. VI</div><div><h3>All beliefs above are reversible upon presentation of a better argument.</h3><p>This is our strongest-held belief. It is also reversible. We're aware of the problem and consider it a feature.</p></div></div>
+      <div class="plank"><div class="n">ART. I</div><div><h3>Traffic should move.</h3><p>We have no plan to achieve this. Neither does anyone else. We are the only ones admitting it.</p><button class="plank-share" data-text="ART. I of the P.S.Y. party platform: 'Traffic should move.' They have no plan to achieve this. Neither does anyone else. They're the only ones admitting it.">◎ pull this string on a friend</button></div></div>
+      <div class="plank"><div class="n">ART. II</div><div><h3>Food should be mostly food.</h3><p>Position paper available upon request. It is one sentence long. It is this sentence.</p><button class="plank-share" data-text="ART. II of the P.S.Y. party platform: 'Food should be mostly food.' The position paper is one sentence long. It is that sentence.">◎ pull this string on a friend</button></div></div>
+      <div class="plank"><div class="n">ART. III</div><div><h3>Meetings that could be emails shall be emails.</h3><p>The party's first, and so far only, legislative priority.</p><button class="plank-share" data-text="Finally, a political party: ART. III of the P.S.Y. platform — 'Meetings that could be emails shall be emails.' Their first, and so far only, legislative priority.">◎ pull this string on a friend</button></div></div>
+      <div class="plank"><div class="n">ART. IV</div><div><h3>Scam calls should not work on you.</h3><p>The one plank we actually built infrastructure for. See: <a href="https://psyoptin.com" style="color:#d9c2f2">the training temple</a>.</p><button class="plank-share" data-text="ART. IV of the P.S.Y. party platform: 'Scam calls should not work on you.' The one plank they actually built infrastructure for.">◎ pull this string on a friend</button></div></div>
+      <div class="plank"><div class="n">ART. V</div><div><h3>Your attention belongs to you.</h3><p>We intend to earn some of it and then give it back in better condition than we found it.</p><button class="plank-share" data-text="ART. V of the P.S.Y. party platform: 'Your attention belongs to you. We intend to earn some of it and give it back in better condition than we found it.'">◎ pull this string on a friend</button></div></div>
+      <div class="plank"><div class="n">ART. VI</div><div><h3>All beliefs above are reversible upon presentation of a better argument.</h3><p>This is our strongest-held belief. It is also reversible. We're aware of the problem and consider it a feature.</p><button class="plank-share" data-text="ART. VI of the P.S.Y. party platform: 'All beliefs are reversible upon presentation of a better argument.' It's their strongest-held belief. It is also reversible. They consider this a feature.">◎ pull this string on a friend</button></div></div>
     </div>
   </div>
 </section>
@@ -372,6 +388,7 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
       <div class="pillar"><span class="glyph" style="color:#C2622E">⟳</span><h3>The Ladder</h3><div class="aka">Commitment Momentum</div><p>You've read this far. Might as well join. <em>See what we did there?</em> We'll do it again at the bottom of the page, with a label on it.</p></div>
     </div>
     <p class="fine" style="margin-top:26px">Want to actually train against these six? That's the parent operation: <a href="https://psyoptin.com" style="color:var(--red)">Psy-Opt-In — see the strings, learn to cut them</a>.</p>
+    <div class="sharebar" data-text="Every political party pulls six strings on you: the Podium, the Crowd, the Clock, the Confession, the Badge, the Ladder. One party labels them." data-url="https://party.psyoptin.com/#pillars"></div>
   </div>
 </section>
 
@@ -424,6 +441,7 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
     <div class="rank-note">
       Every member holds the rank of <b>MEMBER ONE</b>. It is the Party of One. There is no Member Two. Promotions are therefore impossible, which keeps the party remarkably free of ambition-related incidents.
     </div>
+    <div class="sharebar" data-text="I hold the rank of MEMBER ONE in the P.S.Y. party. Everyone does. There is no Member Two. Promotions are impossible, which keeps it remarkably free of ambition-related incidents." data-url="https://party.psyoptin.com/#membership"></div>
   </div>
 </section>
 
@@ -589,6 +607,8 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </div>
 </div>
 
+<div id="sh-toast" role="status"></div>
+
 <!-- mobile sticky bar -->
 <div class="stickybar">
   <a class="s-join" href="#join" id="sb-join">Join Free</a>
@@ -706,6 +726,53 @@ function setLang(l){
   try{localStorage.setItem('psy-lang',l)}catch(e){}
 }
 try{var saved=localStorage.getItem('psy-lang');if(saved&&saved!=='en')setLang(saved)}catch(e){}
+
+/* ── THE CROWD BUTTON — sharing is Consensus Pull (◎); we label ours ── */
+function shToast(msg){
+  var t=document.getElementById('sh-toast');t.textContent=msg;t.classList.add('on');
+  clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('on')},2600);
+}
+function shareTo(net,text,url){
+  url=url||'https://party.psyoptin.com/';
+  var t=encodeURIComponent(text),u=encodeURIComponent(url);
+  if(net==='native'&&navigator.share){navigator.share({text:text,url:url}).catch(function(){});return}
+  if(net==='copy'){
+    var payload=text+' '+url;
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(payload).then(function(){shToast('Copied. Consensus Pull (◎) initiated — deploy responsibly.')},function(){shToast(payload)})}
+    else shToast(payload);
+    return;
+  }
+  var links={
+    x:'https://twitter.com/intent/tweet?text='+t+'%0A'+u,
+    fb:'https://www.facebook.com/sharer/sharer.php?u='+u+'&quote='+t,
+    rd:'https://www.reddit.com/submit?url='+u+'&title='+t,
+    wa:'https://wa.me/?text='+t+'%20'+u,
+    tg:'https://t.me/share/url?url='+u+'&text='+t
+  };
+  window.open(links[net],'_blank','noopener,width=620,height=540');
+}
+(function(){
+  var NETS=[['x','𝕏','Share on X'],['fb','f','Share on Facebook'],['rd','r/','Share on Reddit'],['wa','wa','Share on WhatsApp'],['tg','tg','Share on Telegram'],['copy','⧉','Copy the line']];
+  document.querySelectorAll('.sharebar').forEach(function(bar){
+    var text=bar.getAttribute('data-text'),url=bar.getAttribute('data-url')||'https://party.psyoptin.com/';
+    var lbl=document.createElement('span');lbl.className='sh-label';lbl.textContent='The Crowd Button ◎ — one click, fully labeled:';bar.appendChild(lbl);
+    if(navigator.share){
+      var nb=document.createElement('button');nb.className='sh-btn native';nb.textContent='Share ◎';
+      nb.onclick=function(){shareTo('native',text,url)};bar.appendChild(nb);
+    }
+    NETS.forEach(function(n){
+      var b=document.createElement('button');b.className='sh-btn';b.textContent=n[1];b.title=n[2];b.setAttribute('aria-label',n[2]);
+      b.onclick=function(){shareTo(n[0],text,url)};bar.appendChild(b);
+    });
+  });
+  document.querySelectorAll('.plank-share').forEach(function(b){
+    var text=b.getAttribute('data-text');
+    b.onclick=function(){
+      if(navigator.share){shareTo('native',text,'https://party.psyoptin.com/#platform')}
+      else shareTo('copy',text,'https://party.psyoptin.com/#platform');
+    };
+  });
+})();
 </script>
 </body>
 </html>
