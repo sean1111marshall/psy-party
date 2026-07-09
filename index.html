@@ -217,6 +217,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .roll-empty{margin-top:26px;font-size:16px;font-style:italic}
 .jf-err{display:none;background:#fff;color:var(--red);padding:12px 14px;font-weight:700;margin-bottom:14px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:14px}
 
+/* party record */
+.recsec{background:#fff}
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:34px}
+.rec-card{background:var(--cream);border:1px solid var(--line);padding:22px 22px 18px;position:relative}
+.rec-card::before{content:"“";position:absolute;top:6px;left:14px;font-size:52px;color:var(--purple);opacity:.3;font-family:Georgia,serif}
+.rec-card .finding{font-size:16px;font-style:italic;margin-bottom:14px;padding-left:12px}
+.rec-card .who{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:800;color:var(--navy)}
+.rec-card .meta{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11.5px;color:#6b7080;margin-top:2px;letter-spacing:.04em}
+.rec-empty{margin-top:30px;font-size:16px;font-style:italic}
+
 /* footer */
 footer{background:var(--navy);color:rgba(246,241,231,.7);padding:56px 20px;font-size:13px}
 footer .wrap-wide{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
@@ -429,6 +439,17 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </div>
 </section>
 
+<!-- PARTY RECORD -->
+<section class="recsec" id="record">
+  <div class="wrap-wide">
+    <div class="kicker">The Party Record</div>
+    <h2>Findings from the field.</h2>
+    <p class="lede">Members reply to each week's Standing Order with what they caught — a countdown that survived its own deadline, an app that asked nine questions before doing anything, a crowd that turned out to be three people. The best catches are read into the record here, by alias and designation only. Every entry is a real reply from a real member; the party does not write its own reviews. Obviously.</p>
+    <div class="rec-grid" id="rec-grid"></div>
+    <p class="rec-empty" id="rec-empty" style="display:none">The record awaits its first finding. It opens the moment a member replies to a Standing Order with a catch worth preserving — no sooner, because inventing testimonials is an Other Parties move.</p>
+  </div>
+</section>
+
 <!-- JOIN -->
 <section class="join" id="join">
   <div class="wrap">
@@ -615,6 +636,20 @@ fetch(API+'/party-roll').then(function(r){return r.json()}).then(function(d){
     c.appendChild(b);c.appendChild(s1);c.appendChild(s2);g.appendChild(c);
   });
 }).catch(function(){document.getElementById('roll-n').textContent='—'});
+
+/* ── party record: curated real findings, alias-only ── */
+fetch(API+'/party-record').then(function(r){return r.json()}).then(function(d){
+  var g=document.getElementById('rec-grid'),es=d.entries||[];
+  if(!es.length){document.getElementById('rec-empty').style.display='block';return}
+  es.forEach(function(e){
+    var c=document.createElement('div');c.className='rec-card';
+    var f=document.createElement('div');f.className='finding';f.textContent=e.finding;
+    var w=document.createElement('div');w.className='who';w.textContent=e.alias||'Member One';
+    var m=document.createElement('div');m.className='meta';
+    m.textContent=(e.callsign||'')+(e.orderNo?' · ORDER № '+e.orderNo+(e.orderTitle?' — '+e.orderTitle:''):'');
+    c.appendChild(f);c.appendChild(w);c.appendChild(m);g.appendChild(c);
+  });
+}).catch(function(){document.getElementById('rec-empty').style.display='block'});
 
 function openFund(e){if(e)e.preventDefault();document.getElementById('fundback').classList.add('open')}
 function closeFund(){document.getElementById('fundback').classList.remove('open')}
