@@ -159,6 +159,48 @@ form.join-form{margin-top:34px;max-width:560px}
 .machine-strip p{font-size:15px}
 .btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:#08142a}
 
+/* ticket / endorsements */
+.ticket{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ticket .cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px}
+@media(max-width:720px){.ticket .cols{grid-template-columns:1fr}}
+.ticket h3{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.ticket .cand{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:clamp(30px,5vw,44px);font-weight:900;color:var(--navy);line-height:1.05}
+.ticket p{font-size:15px;margin-top:10px}
+.endorse{list-style:none}
+.endorse li{padding:10px 0 10px 30px;border-bottom:1px solid var(--line);font-size:15.5px;position:relative}
+.endorse li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:700}
+.endorse li.pend::before{content:"…";color:var(--red)}
+
+/* fund modal */
+.modal-back{display:none;position:fixed;inset:0;background:rgba(11,27,51,.72);z-index:200;align-items:center;justify-content:center;padding:20px}
+.modal-back.open{display:flex}
+.modal{background:var(--cream);max-width:520px;width:100%;padding:34px 30px;position:relative;max-height:88vh;overflow-y:auto}
+.modal .x{position:absolute;top:10px;right:14px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--navy);padding:4px 8px}
+.modal h3{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:24px;color:var(--navy);margin-bottom:10px;font-weight:900}
+.modal .disc{font-size:14px;background:var(--cream2);border-left:4px solid var(--gold);padding:12px 14px;margin-bottom:18px}
+.amounts{display:flex;gap:10px;margin-bottom:8px}
+.amounts button{flex:1;padding:12px 0;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:16px;background:#fff;border:2px solid var(--line);cursor:pointer;color:var(--navy)}
+.amounts button:hover{border-color:var(--red)}
+.amt-note{display:none;font-size:13.5px;font-style:italic;color:var(--red);margin-bottom:14px}
+.fund-opt{display:block;border:1px solid var(--line);background:#fff;padding:16px 18px;margin-top:12px;text-decoration:none;color:var(--ink)}
+.fund-opt:hover{border-color:var(--purple)}
+.fund-opt b{font-family:-apple-system,'Segoe UI',Arial,sans-serif;color:var(--navy);display:block;font-size:15px}
+.fund-opt span{font-size:13.5px}
+.fund-opt .pr{float:right;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;color:var(--gold)}
+
+/* lang toggle / sticky bar / a11y */
+.langs{display:flex;gap:2px;margin-left:6px}
+.langs button{background:none;border:1px solid var(--line);padding:4px 9px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11.5px;font-weight:700;cursor:pointer;color:var(--navy);opacity:.7}
+.langs button.on{background:var(--navy);color:var(--cream);opacity:1}
+.stickybar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--navy);padding:10px 12px;gap:10px;border-top:3px solid var(--red)}
+.stickybar a{flex:1;text-align:center;padding:12px 0;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.stickybar .s-join{background:var(--red);color:#fff}
+.stickybar .s-fund{border:2px solid var(--cream);color:var(--cream)}
+@media(max-width:680px){.stickybar{display:flex}body{padding-bottom:64px}}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--navy);padding:10px 16px;z-index:300;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800}
+.skip:focus{left:8px}
+
 /* footer */
 footer{background:var(--navy);color:rgba(246,241,231,.7);padding:56px 20px;font-size:13px}
 footer .wrap-wide{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
@@ -180,6 +222,7 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </div>
 </div>
 
+<a class="skip" href="#join">Skip to enrollment</a>
 <nav>
   <div class="nav-in">
     <a class="nav-mark" href="#top">P.<b>S.</b>Y.</a>
@@ -188,7 +231,13 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
     <a class="lnk" href="#pillars">The Six Strings</a>
     <a class="lnk" href="#inner">Inner Party</a>
     <a class="lnk" href="machine.html">The Machine</a>
-    <a class="nav-join" href="#join">Join Free</a>
+    <a class="lnk" href="#fund" onclick="openFund(event)" id="nav-fund">Fund</a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" class="on" onclick="setLang('en')" id="lb-en">EN</button>
+      <button type="button" onclick="setLang('es')" id="lb-es">ES</button>
+      <button type="button" onclick="setLang('zh')" id="lb-zh">中文</button>
+    </div>
+    <a class="nav-join" href="#join" id="nav-join">Join Free</a>
   </div>
 </nav>
 
@@ -203,11 +252,11 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </svg>
   <h1>P.<span>S.</span>Y.</h1>
   <div class="expand">Psychological Strategic Yield</div>
-  <p class="motto">"Ordered liberty, through the freedom to choose. Or want."</p>
-  <p class="sub">The acronym stands for whatever it needs to. Currently: Psychological Strategic Yield. This is disclosed, like everything else.</p>
+  <p class="motto" id="motto">"Ordered liberty, through the freedom to choose. Or want."</p>
+  <p class="sub" id="hero-sub">The acronym stands for whatever it needs to. Currently: Psychological Strategic Yield. This is disclosed, like everything else.</p>
   <div class="hero-ctas">
-    <a class="btn btn-red" href="#join">Join the Party — Free</a>
-    <a class="btn btn-ghost" href="#inner">Get Psyoped — Paid</a>
+    <a class="btn btn-red" href="#join" id="cta-join">Join the Party — Free</a>
+    <a class="btn btn-ghost" href="#inner" id="cta-inner">Get Psyoped — Paid</a>
   </div>
   <div class="paidfor">Ad paid for by Psy-Opt-In · Consent NOT assumed by continued viewing — we collect it properly below</div>
 </header>
@@ -304,6 +353,31 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </div>
 </section>
 
+<!-- TICKET + ENDORSEMENTS -->
+<section class="ticket" id="ticket">
+  <div class="wrap">
+    <div class="kicker">The 2026 Ticket</div>
+    <h2>Our candidate, for every office, at every level:</h2>
+    <div class="cols">
+      <div>
+        <h3>The Candidate</h3>
+        <div class="cand">NO ONE.</div>
+        <p>The Party of One runs no candidates. We did the research: the person best qualified to govern your attention, your wallet, and your Sunday afternoons already lives at your address. Write yourself in. (Don't actually — ballot rules exist and we respect them enormously.)</p>
+      </div>
+      <div>
+        <h3>Endorsements</h3>
+        <ul class="endorse">
+          <li>Your own better judgment</li>
+          <li>The habit of reading the fine print</li>
+          <li>Whoever first said "sleep on it"</li>
+          <li>Zero elected officials — we asked zero</li>
+          <li class="pend">Your uncle who forwards the emails (pending)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MEMBERSHIP -->
 <section id="membership">
   <div class="wrap">
@@ -324,35 +398,35 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
 <!-- JOIN -->
 <section class="join" id="join">
   <div class="wrap">
-    <div class="kicker">Enrollment</div>
-    <h2>Join the Party of One.</h2>
-    <p class="lede">This is The Ladder (⟳ Commitment Momentum) and The Badge (✦ Identity Hooks) working together, as disclosed above. Knowing that, and joining anyway because it sounds fun, is the most P.S.Y. thing you can possibly do.</p>
+    <div class="kicker" id="join-kick">Enrollment</div>
+    <h2 id="join-h">Join the Party of One.</h2>
+    <p class="lede" id="join-lede">This is The Ladder (⟳ Commitment Momentum) and The Badge (✦ Identity Hooks) working together, as disclosed above. Knowing that, and joining anyway because it sounds fun, is the most P.S.Y. thing you can possibly do.</p>
     <form class="join-form" name="join" method="POST" action="/welcome.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="join">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="jf-row">
-        <label for="jname">Name or Alias (optional — the party respects a good alias)</label>
+        <label for="jname" id="l-name">Name or Alias (optional — the party respects a good alias)</label>
         <input type="text" id="jname" name="name" placeholder="Citizen Obvious">
       </div>
       <div class="jf-row">
-        <label for="jemail">Email (required — this is the one thing we actually ask for)</label>
+        <label for="jemail" id="l-email">Email (required — this is the one thing we actually ask for)</label>
         <input type="email" id="jemail" name="email" required placeholder="you@example.com">
       </div>
       <div class="jf-row">
-        <label for="jrole">Chosen Role</label>
+        <label for="jrole" id="l-role">Chosen Role</label>
         <select id="jrole" name="role">
-          <option value="target">The Target — run your techniques on me</option>
-          <option value="operator">The Operator — teach me the strings</option>
-          <option value="citizen">The Citizen — good deeds, absurd banner</option>
-          <option value="undecided">Undecided — doctrine says that's fine</option>
+          <option value="target" id="o-target">The Target — run your techniques on me</option>
+          <option value="operator" id="o-operator">The Operator — teach me the strings</option>
+          <option value="citizen" id="o-citizen">The Citizen — good deeds, absurd banner</option>
+          <option value="undecided" id="o-undecided">Undecided — doctrine says that's fine</option>
         </select>
       </div>
       <label class="consent">
         <input type="checkbox" name="consent" value="explicit-opt-in" required>
-        <span><strong>Explicit opt-in:</strong> I understand P.S.Y. is satire and performance art, and I consent to receive party communications that openly use influence techniques on me for entertainment and self-awareness. Every message includes an unsubscribe link. Leaving is one click and nobody will guilt me about it, because guilt-tripping the departed is an Other Parties move.</span>
+        <span id="consent-txt"><strong>Explicit opt-in:</strong> I understand P.S.Y. is satire and performance art, and I consent to receive party communications that openly use influence techniques on me for entertainment and self-awareness. Every message includes an unsubscribe link. Leaving is one click and nobody will guilt me about it, because guilt-tripping the departed is an Other Parties move.</span>
       </label>
-      <button type="submit">Enroll Me — Member One</button>
-      <p class="escape">Not ready? Correct instinct. Come back Thursday — there is no deadline. Or just go <a href="https://psyoptin.com">train against this exact page</a>.</p>
+      <button type="submit" id="join-btn">Enroll Me — Member One</button>
+      <p class="escape" id="join-esc">Not ready? Correct instinct. Come back Thursday — there is no deadline. Or just go <a href="https://psyoptin.com">train against this exact page</a>.</p>
     </form>
   </div>
 </section>
@@ -429,5 +503,78 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </div>
 </footer>
 
+<!-- FUND THE MACHINE modal -->
+<div class="modal-back" id="fundback" onclick="if(event.target===this)closeFund()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fund-h">
+    <button class="x" onclick="closeFund()" aria-label="Close">×</button>
+    <h3 id="fund-h">Fund the Machine</h3>
+    <div class="disc"><strong>Full disclosure:</strong> P.S.Y. does not accept political contributions — we're satire, and satire keeps receipts. Everything below is a plain product with a price tag and a receipt. This is what an honest donate button looks like.</div>
+    <div class="amounts">
+      <button type="button" onclick="amtNote()">$5</button>
+      <button type="button" onclick="amtNote()">$25</button>
+      <button type="button" onclick="amtNote()">$50</button>
+    </div>
+    <p class="amt-note" id="amt-note">There is no $5/$25/$50. Preset round numbers are The Ladder (⟳) wearing a bow tie. Here's what things actually cost:</p>
+    <a class="fund-opt" href="https://buy.stripe.com/5kQ28t3zd9in4RZ5y84ow01"><span class="pr">$7.99/mo</span><b>Psy-Opt-In Plus — Monthly</b><span>Full training temple: all six worlds, the Companion, the X-Ray debriefs.</span></a>
+    <a class="fund-opt" href="https://buy.stripe.com/bJecN73zdgKPdove4E4ow02"><span class="pr">$59/yr</span><b>Psy-Opt-In Plus — Yearly</b><span>Same temple, better math. No auto-guilt if you cancel.</span></a>
+    <a class="fund-opt" href="tel:+12515014159"><span class="pr">FREE</span><b>Call The Line</b><span>+1 (251) 501-4159 — survive a live social-engineering character. Costs you nothing but composure.</span></a>
+    <p style="margin-top:16px;font-size:12.5px;color:#5a5f4a;font-style:italic">Membership itself is $0 forever. It's the Party of One, not the Party of One Weird Billing Trick.</p>
+  </div>
+</div>
+
+<!-- mobile sticky bar -->
+<div class="stickybar">
+  <a class="s-join" href="#join" id="sb-join">Join Free</a>
+  <a class="s-fund" href="#fund" onclick="openFund(event)" id="sb-fund">Fund</a>
+</div>
+
+<script>
+function openFund(e){if(e)e.preventDefault();document.getElementById('fundback').classList.add('open')}
+function closeFund(){document.getElementById('fundback').classList.remove('open')}
+function amtNote(){document.getElementById('amt-note').style.display='block'}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeFund()});
+
+/* ── trilingual conversion path (EN/ES/中文) — hero + enrollment ── */
+var I18N={
+en:{},
+es:{
+ 'motto':'«Libertad ordenada, mediante la libertad de elegir. O de querer.»',
+ 'hero-sub':'La sigla significa lo que necesite significar. Actualmente: Rendimiento Psicológico Estratégico. Esto se divulga, como todo lo demás.',
+ 'cta-join':'Únete al Partido — Gratis','cta-inner':'Recibe la Psyop — De Pago','nav-join':'Únete Gratis','nav-fund':'Financiar','sb-join':'Únete Gratis','sb-fund':'Financiar',
+ 'join-kick':'Inscripción','join-h':'Únete al Partido de Uno.',
+ 'join-lede':'Esto es La Escalera (⟳ Impulso de Compromiso) y La Insignia (✦ Anzuelos de Identidad) trabajando juntas, como se divulgó arriba. Saberlo, y unirte igual porque suena divertido, es lo más P.S.Y. que puedes hacer.',
+ 'l-name':'Nombre o alias (opcional — el partido respeta un buen alias)',
+ 'l-email':'Correo electrónico (obligatorio — es lo único que realmente pedimos)',
+ 'l-role':'Rol elegido',
+ 'o-target':'El Blanco — usen sus técnicas conmigo','o-operator':'El Operador — enséñenme los hilos','o-citizen':'El Ciudadano — buenas obras, bandera absurda','o-undecided':'Indeciso — la doctrina dice que está bien',
+ 'consent-txt':'<strong>Consentimiento explícito:</strong> Entiendo que P.S.Y. es sátira y arte performático, y consiento recibir comunicaciones del partido que usan abiertamente técnicas de influencia sobre mí, para entretenimiento y autoconciencia. Cada mensaje incluye un enlace para darse de baja. Irse toma un clic y nadie me hará sentir culpable — culpar al que se va es cosa de los Otros Partidos.',
+ 'join-btn':'Inscríbeme — Miembro Uno',
+ 'join-esc':'¿No estás listo? Instinto correcto. Vuelve el jueves — no hay fecha límite. O ve a <a href="https://psyoptin.com">entrenar contra esta misma página</a>.'
+},
+zh:{
+ 'motto':'「有序的自由，源于选择的自由。或欲望的自由。」',
+ 'hero-sub':'这个缩写的含义随需要而定。目前是：心理战略收益。这一点也公开披露，就像其他一切一样。',
+ 'cta-join':'免费入党','cta-inner':'付费体验心理战','nav-join':'免费入党','nav-fund':'资助','sb-join':'免费入党','sb-fund':'资助',
+ 'join-kick':'登记入党','join-h':'加入一人党。',
+ 'join-lede':'此刻正是「阶梯」（⟳ 承诺惯性）与「徽章」（✦ 身份钩子）在协同工作，如上文所披露。明知如此，仍因觉得有趣而加入——这正是最 P.S.Y. 的行为。',
+ 'l-name':'姓名或化名（可选——本党尊重一个好化名）',
+ 'l-email':'电子邮箱（必填——这是我们唯一真正索取的东西）',
+ 'l-role':'选择角色',
+ 'o-target':'靶子——对我使用你们的技巧','o-operator':'操盘手——教我那些线','o-citizen':'公民——做好事，举荒诞的旗','o-undecided':'未定——教义说这完全可以',
+ 'consent-txt':'<strong>明确同意：</strong>我了解 P.S.Y. 是讽刺与行为艺术。我同意接收本党公开对我使用影响力技巧的通讯，仅用于娱乐与自我觉察。每封邮件都附有退订链接。退出只需一次点击，没有人会让我内疚——对退出者进行内疚绑架是「其他政党」的做法。',
+ 'join-btn':'登记入党——一号党员',
+ 'join-esc':'还没准备好？直觉正确。周四再来——本来就没有截止日期。或者去<a href="https://psyoptin.com">针对这个页面进行训练</a>。'
+}};
+var EN={};
+function setLang(l){
+  var ids=Object.keys(I18N.es);
+  if(!Object.keys(EN).length){ids.forEach(function(id){var el=document.getElementById(id);if(el)EN[id]=el.innerHTML})}
+  ids.forEach(function(id){var el=document.getElementById(id);if(!el)return;el.innerHTML=(l==='en')?EN[id]:(I18N[l][id]||EN[id])});
+  ['en','es','zh'].forEach(function(k){document.getElementById('lb-'+k).classList.toggle('on',k===l)});
+  document.documentElement.lang=(l==='zh')?'zh-Hans':l;
+  try{localStorage.setItem('psy-lang',l)}catch(e){}
+}
+try{var saved=localStorage.getItem('psy-lang');if(saved&&saved!=='en')setLang(saved)}catch(e){}
+</script>
 </body>
 </html>
