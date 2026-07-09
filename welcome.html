@@ -34,6 +34,13 @@ a.btn.red{background:var(--red);border-color:var(--red);color:#fff}
   <div class="kicker" id="kick">Enrollment Confirmed</div>
   <h1 id="head">Welcome, <span>Member One</span>.</h1>
   <p id="body1">You now hold the party's only rank. There is no Member Two, so congratulations on reaching the top. The costume is yours; the label is sewn on the outside, as required.</p>
+  <div class="assignment" id="idcard" style="display:none;border-left-color:#B98900">
+    <div class="h" style="color:#B98900">Party Identification — issued, not earned</div>
+    <p style="font-family:-apple-system,'Segoe UI',Arial,sans-serif"><strong id="id-cs" style="font-size:19px"></strong><br>
+    <span id="id-cell" style="opacity:.85"></span><br>
+    <span style="opacity:.7;font-size:14px">Rank: MEMBER ONE · Your designation is deterministic — rejoin a thousand times, it's still yours.</span></p>
+  </div>
+  <p id="mailnote" style="display:none;font-size:15px">Your papers are also in your inbox — the Handler has written to you. (Check spam once; command it "not spam" and it will obey forever.)</p>
   <div class="assignment" id="assign">
     <div class="h">First Standing Order</div>
     <p>Today, notice <strong>one</strong> attempt to influence you — an ad, a headline, a guilt trip, a limited-time offer. Don't resist it. Just see the string. That's the entire assignment. That's the entire party.</p>
@@ -44,6 +51,15 @@ a.btn.red{background:var(--red);border-color:var(--red);color:#fff}
   <p class="fine">Changed your mind already? Perfectly doctrinal. Every email we ever send has a one-click unsubscribe, and the safeword — CUT THE STRINGS — always works.</p>
 </div>
 <script>
+var Q=new URLSearchParams(location.search);
+var cs=Q.get('cs'),cell=Q.get('cell'),alias=Q.get('a');
+if(cs){
+  document.getElementById('id-cs').textContent=cs;
+  document.getElementById('id-cell').textContent=cell||'';
+  document.getElementById('idcard').style.display='block';
+  document.getElementById('mailnote').style.display='block';
+  if(alias)document.getElementById('head').innerHTML='Welcome, <span>'+alias.replace(/[<>&"]/g,'')+'</span>.';
+}
 if(new URLSearchParams(location.search).get('from')==='machine'){
   document.getElementById('kick').textContent='Briefing Requested';
   document.getElementById('head').innerHTML='Received. <span>Teardown incoming.</span>';
