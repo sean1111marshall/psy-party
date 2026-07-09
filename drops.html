@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drops — P.S.Y. The Party of One</title>
+<meta name="description" content="Limited-edition party artifacts with the scarcity label on the outside. Drop 001: The Member One Papers — 100 will ever be issued, every one an Edition 1 of 1.">
+<link rel="canonical" href="https://party.psyoptin.com/drops.html">
+<meta property="og:title" content="P.S.Y. DROPS — honest scarcity, numbered artifacts">
+<meta property="og:description" content="Drop 001: The Member One Papers. 100 ever. Every copy an Edition 1 of 1. When № 100 sells, the code turns the buy button off.">
+<meta property="og:image" content="https://party.psyoptin.com/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--navy:#0B1B33;--navy2:#0F2547;--red:#C8322B;--cream:#F6F1E7;--cream2:#EFE7D6;--gold:#B98900;--purple:#8C4CBF;--ink:#14213A;--line:rgba(11,27,51,.16)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+h1,h2,h3{font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+nav{background:var(--cream);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.nav-mark{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;letter-spacing:.22em;font-size:18px;color:var(--navy);text-decoration:none}
+.nav-mark b{color:var(--red)}
+nav a.lnk{margin-left:auto;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);text-decoration:none;opacity:.75}
+nav a.lnk:hover{opacity:1;color:var(--red)}
+.hero{background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--cream);padding:64px 20px;text-align:center}
+.kicker{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.hero .kicker{color:var(--gold)}
+.hero h1{font-size:clamp(36px,7vw,64px);font-weight:900;letter-spacing:.08em}
+.hero p{max-width:600px;margin:16px auto 0;font-size:17px;color:rgba(246,241,231,.85)}
+section{padding:64px 20px}
+.wrap{max-width:920px;margin:0 auto}
+h2{font-size:clamp(26px,4.5vw,38px);font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:18px}
+
+/* drop card */
+.drop{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+@media(max-width:800px){.drop{grid-template-columns:1fr}}
+.specimen{background:#F9F5EA;border:3px double var(--navy);padding:26px 22px;text-align:center;position:relative;box-shadow:0 12px 40px rgba(11,27,51,.18);transform:rotate(-1deg)}
+.specimen::after{content:"SPECIMEN";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:52px;font-weight:900;letter-spacing:.2em;color:rgba(200,50,43,.13);transform:rotate(-18deg);pointer-events:none}
+.specimen .s-org{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:9px;font-weight:800;letter-spacing:.34em;color:var(--navy)}
+.specimen h3{font-size:19px;font-weight:400;font-variant:small-caps;letter-spacing:.1em;color:var(--navy);font-family:Georgia,serif;margin:10px 0 6px}
+.specimen .s-alias{font-size:17px;font-weight:700}
+.specimen .s-it{font-size:11px;font-style:italic;color:#4a5468;margin:4px 0}
+.specimen .s-desig{font-size:15px;color:var(--gold);font-weight:700;max-width:280px;margin:0 auto}
+.specimen .s-ed{border:1px solid var(--navy);display:inline-block;padding:6px 14px;margin-top:14px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:10px;font-weight:900;letter-spacing:.12em;color:var(--navy)}
+.specimen svg{width:56px;height:56px;margin:0 auto 8px;display:block}
+.buy h2{margin-bottom:8px}
+.price{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:44px;font-weight:900;color:var(--gold)}
+.price small{font-size:15px;color:#6b7080;font-weight:600}
+.meter{margin:22px 0;background:#fff;border:1px solid var(--line);padding:16px 18px}
+.meter .nums{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:22px;color:var(--navy)}
+.meter .bar{height:10px;background:var(--cream2);margin:10px 0 8px;position:relative}
+.meter .fill{position:absolute;left:0;top:0;bottom:0;background:var(--red);width:0%}
+.meter .note{font-size:12.5px;font-style:italic;color:#6b7080}
+.btn{display:inline-block;padding:16px 38px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:15px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:var(--red);color:#fff}
+.btn:hover{background:#a5241e}
+.btn.closed{background:#8a8f9c;pointer-events:none}
+.gets{margin-top:26px}
+.gets li{list-style:none;padding:9px 0 9px 30px;position:relative;font-size:15.5px;border-bottom:1px solid var(--line)}
+.gets li::before{content:"★";position:absolute;left:2px;color:var(--gold)}
+
+.honest{background:var(--navy);color:var(--cream)}
+.honest h2{color:var(--cream)}
+.honest .kicker{color:var(--gold)}
+.honest p{font-size:16.5px;max-width:720px}
+.honest p+p{margin-top:14px}
+.honest code{font-family:Consolas,monospace;background:rgba(246,241,231,.12);padding:2px 8px;font-size:14px;color:#ffd9a8}
+
+.faq{background:var(--cream2)}
+.faq .qa{border-bottom:1px solid var(--line);padding:18px 0}
+.faq .q{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:16px;color:var(--navy)}
+.faq .a{font-size:15px;margin-top:6px}
+.next{padding:56px 20px;text-align:center}
+.next .kicker{color:var(--purple)}
+.next p{font-size:16px;max-width:560px;margin:0 auto;font-style:italic}
+footer{background:var(--navy);color:rgba(246,241,231,.6);padding:34px 20px;text-align:center;font-size:12.5px;line-height:1.7}
+footer a{color:#d9c2f2;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="nav-mark" href="index.html">P.<b>S.</b>Y.</a>
+    <a class="lnk" href="index.html">← Back to the Party</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kicker">Party Artifacts · Honest Scarcity Division</div>
+  <h1>DROPS</h1>
+  <p>Limited editions with the scarcity label sewn on the outside. Real caps, real counters, and a buy button that turns itself off — you can read the code that does it.</p>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Drop 001 · Now Issuing</div>
+    <div class="drop">
+      <div class="specimen" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="96" fill="none" stroke="#B98900" stroke-width="3"/>
+          <path d="M42 46 L158 46 L100 148 Z" fill="none" stroke="#8C4CBF" stroke-width="6" stroke-linejoin="round"/>
+          <text x="100" y="104" text-anchor="middle" fill="#B98900" font-family="Georgia,serif" font-size="52" font-weight="bold">1</text>
+        </svg>
+        <div class="s-org">PSYCHOLOGICAL STRATEGIC YIELD</div>
+        <h3>The Papers of Member One</h3>
+        <p class="s-it">Be it known that</p>
+        <div class="s-alias">Citizen Obvious</div>
+        <p class="s-it">holds, solely and unrepeatably, the designation</p>
+        <div class="s-desig">Warden of the Fine Print · M1-3A9C</div>
+        <div class="s-ed">PAPERS № 007 OF 100 · EDITION 1 OF 1</div>
+      </div>
+      <div class="buy">
+        <h2>The Member One Papers</h2>
+        <div class="price">$19 <small>· one-time · 100 will ever be issued</small></div>
+        <div class="meter">
+          <div class="nums"><span id="issued">—</span> of <span id="cap">100</span> issued</div>
+          <div class="bar"><div class="fill" id="fill"></div></div>
+          <div class="note" id="meter-note">This counter is live from the ledger. It has never been rounded up, and it never will be.</div>
+        </div>
+        <a class="btn" id="buy" href="https://buy.stripe.com/8x2cN7b1FeCH4RZbWw4ow05">Claim Your Papers — $19</a>
+        <ul class="gets">
+          <li>Official party identification, personalized with <strong>your</strong> sole, unrepeatable designation — the same one the membership ledger would issue you.</li>
+          <li>A real sequential Papers № (001–100), recorded forever in the party ledger.</li>
+          <li><strong>Edition 1 of 1 — every time.</strong> No two Papers can be identical. We print the arithmetic on the document.</li>
+          <li>Delivered instantly: a print-ready document (Letter &amp; A4) plus a permanent claim link by email.</li>
+          <li>Printing is your job. Framing is your problem. Self-reliance is Article VII.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="honest">
+  <div class="wrap">
+    <div class="kicker">How the Scarcity Works</div>
+    <h2>When № 100 is issued, the code turns the button off.</h2>
+    <p>Every other store's "limited drop" is a promise. Ours is a mechanism: the fulfillment code counts each Papers as it's issued, and the moment the counter reaches the cap, it calls the payment processor and <code>deactivates the buy link</code> — automatically, permanently, without a human deciding to "extend due to demand."</p>
+    <p>No countdown timers. No "only 3 left!" that resets at midnight. No waitlist that's actually a mailing list. The counter above is the real number, the cap is in the code, and the off switch throws itself. This is what scarcity looks like with the label on — and yes, selling scarcity honestly while explaining the trick is the entire brand. You've read this far. That's the Ladder (⟳). You know it's the Ladder. Claim your Papers anyway.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="kicker">Anticipated Interrogations</div>
+    <h2>Questions the party expected.</h2>
+    <div class="qa"><div class="q">Is this handmade?</div><div class="a">No. It is honestly made. The final manufacturing step (printing) is performed by the most trusted artisan available: you.</div></div>
+    <div class="qa"><div class="q">If everyone's Papers are 1 of 1, is anything actually rare?</div><div class="a">Yes — the number. Only 100 Papers will ever carry a Drop 001 №. Your designation makes it yours; the № makes it scarce. Two different truths, both printed.</div></div>
+    <div class="qa"><div class="q">Do I need to be a member?</div><div class="a">No, but the Papers use the same designation ledger as membership — buy with the same email you joined with and your Papers will match your party identity exactly. Membership stays free forever either way.</div></div>
+    <div class="qa"><div class="q">Is this a political contribution?</div><div class="a">Absolutely not. It's an entertainment product with a price and a receipt. P.S.Y. is satire, isn't a registered party, and doesn't accept political contributions from anyone, including you, including now.</div></div>
+    <div class="qa"><div class="q">What if I lose the link?</div><div class="a">Reply to your Papers email and the Handler will re-issue it. The ledger forgets nothing, which is more than can be said for the parties that pretend to.</div></div>
+  </div>
+</section>
+
+<section class="next">
+  <div class="kicker">Drop 002</div>
+  <p>There is no announced date, because announced dates are The Clock (▲) and we would have to label it. Drop 002 arrives when it's ready. Members hear first, by Standing Order.</p>
+</section>
+
+<footer>
+  P.S.Y. is satire and performance art by <a href="https://psyoptin.com">Psy-Opt-In</a>. Not a registered political party; payments are for entertainment products.
+  The safeword is CUT THE STRINGS. <a href="index.html">Return to the Party of One</a>.
+</footer>
+
+<script>
+fetch('https://the-line-psyoptin.netlify.app/.netlify/functions/papers?count=1')
+.then(function(r){return r.json()}).then(function(d){
+  var issued=d.issued||0,cap=d.cap||100;
+  document.getElementById('issued').textContent=issued;
+  document.getElementById('cap').textContent=cap;
+  document.getElementById('fill').style.width=Math.min(100,issued/cap*100)+'%';
+  if(!d.active){
+    var b=document.getElementById('buy');b.classList.add('closed');b.textContent='Drop 001 — Closed at '+cap;
+    document.getElementById('meter-note').textContent='The cap was reached and the code turned the buy link off, exactly as promised. Drop 002 will exist eventually.';
+  }
+}).catch(function(){document.getElementById('issued').textContent='?'});
+</script>
+</body>
+</html>
