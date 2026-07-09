@@ -203,6 +203,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 /* party roll */
 .rollsec{background:var(--cream2)}
+.order-strip{margin-top:34px;background:var(--navy);color:var(--cream);padding:26px 28px;border-left:6px solid var(--red)}
+.order-strip .oh{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.order-strip .ot{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:900;margin-bottom:8px}
+.order-strip p{font-size:15.5px;color:rgba(246,241,231,.85)}
+.order-strip .om{margin-top:12px;font-size:12.5px;color:rgba(246,241,231,.55);font-style:italic}
 .roll-count{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:900;font-size:clamp(40px,7vw,64px);color:var(--navy);line-height:1}
 .roll-count small{font-size:16px;font-weight:700;color:var(--red);display:block;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
 .roll-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:30px}
@@ -413,6 +418,12 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
     <h2>The tribe, on the record.</h2>
     <p class="lede">This is The Crowd (◎ Consensus Pull) — and per house rules, it comes with a label and without inflation. The number below is the real enrollment count, live from the membership ledger. Members appear here only if they opt in, by alias or designation, never by contact info.</p>
     <div style="margin-top:30px" class="roll-count"><span id="roll-n">—</span><small id="roll-cap">members enrolled</small></div>
+    <div class="order-strip" id="order-strip" style="display:none">
+      <div class="oh">This Week's Standing Order — <span id="order-no"></span></div>
+      <div class="ot" id="order-title"></div>
+      <p id="order-text"></p>
+      <p class="om">Issued to every Member One at once, each Monday. Members receive it by email and reply with findings. No deadline, no streak, no guilt — the order simply returns next week, as orders do.</p>
+    </div>
     <div class="roll-grid" id="roll-grid"></div>
     <p class="roll-empty" id="roll-empty" style="display:none">The roll awaits its first listed member. An honest zero — which is already more honesty than most parties manage with any of their numbers.</p>
   </div>
@@ -588,6 +599,12 @@ document.querySelector('form.join-form').addEventListener('submit',function(e){
 /* ── party roll: honest live count + opt-in roster ── */
 fetch(API+'/party-roll').then(function(r){return r.json()}).then(function(d){
   document.getElementById('roll-n').textContent=(d.members||0).toLocaleString();
+  if(d.order){
+    document.getElementById('order-no').textContent='№ '+d.order.number;
+    document.getElementById('order-title').textContent=d.order.title;
+    document.getElementById('order-text').textContent=d.order.text;
+    document.getElementById('order-strip').style.display='block';
+  }
   var g=document.getElementById('roll-grid'),roll=d.roll||[];
   if(!roll.length){document.getElementById('roll-empty').style.display='block';return}
   roll.forEach(function(m){
