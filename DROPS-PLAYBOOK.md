@@ -16,8 +16,8 @@
 ### ✅ DROP 001 — The Member One Papers ($19, cap 100)
 Numbered personalized identification document. Edition 1 of 1 every time (unique designation + no Member Two = arithmetic, not marketing). Auto-fulfilled: Stripe → webhook → print-ready certificate page + claim email. Buy link deactivates itself at №100.
 
-### ▢ DROP 002 — The Labeled String ($29, cap 250, needs Printful)
-A single red string in a specimen frame, printed poster-style: the string, a museum label — "STRING, VISIBLE. One (1) of the six. This one controls urgency." Printful framed-poster SKU = zero handling. Six variants (one per pillar); collect all six = "The Full Puppet" (buyer of all six gets a 7th certificate free, auto-detected by webhook).
+### ✅ DROP 002 — The Labeled String ($35, cap 100) — BUILT, STAGED (link inactive until Drop 001 closes)
+Museum specimen poster: one red thread, label "STRING, VISIBLE. Red thread. One (1). Genus: URGENCY." Premium luster 12″×16″ via Printful (variant 6875, ~$19.87 COGS+ship ≈ $13.80 margin). Fully auto: Stripe (US shipping collected) → webhook → Printful order (auto-confirmed) → numbered specimen email. Print file: party.psyoptin.com/img/drop002-print.png. Launch = reactivate Stripe link `plink_1Tr7ZZPDy8E7Fho6BLpBbwJv` + move the card up on drops.html. Future variants (one per pillar, collect-all "Full Puppet" bonus) remain queued.
 
 ### ▢ DROP 003 — THIS SHIRT IS INFLUENCING YOU (tee, needs Printful)
 Front: "THIS SHIRT IS INFLUENCING YOU." Back, care-label style fine print: "ACTIVE INGREDIENTS: Identity signaling (✦), consensus display (◎), conversation bait. WEARER CONSENTED. Machine wash cold." The Mamdani lesson (clear, concrete, consistent) + the MSCHF lesson (the object critiques itself).
