@@ -690,7 +690,7 @@ document.querySelector('form.join-form').addEventListener('submit',function(e){
   .then(function(r){return r.json()})
   .then(function(d){
     if(d.ok){
-      try{localStorage.setItem('psy-mycs',d.callsign||'')}catch(e){}
+      try{localStorage.setItem('psy-mycs',String(d.callsign||'').slice(-7).toUpperCase())}catch(e){}
       location.href='welcome.html?cs='+encodeURIComponent(d.callsign||'')+'&cell='+encodeURIComponent(d.cell||'')+'&a='+encodeURIComponent(body.name||'')+'&m='+(d.members||'')+'&f='+(d.founding||0);
     }else{
       err.textContent=d.error||'Something went wrong — try again.';err.style.display='block';

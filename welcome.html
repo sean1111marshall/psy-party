@@ -98,10 +98,11 @@ if(Q.get('from')==='machine'){
     document.getElementById('foundwrap').style.display='block';
   }
   drawCard(); document.getElementById('cardsec').style.display='block';
-  var link='https://party.psyoptin.com/?r='+encodeURIComponent(cs);
+  var code=(cs||'').slice(-7).toUpperCase();
+  var link='https://party.psyoptin.com/?r='+encodeURIComponent(code);
   document.getElementById('mystring').textContent=link;
   document.getElementById('stringsec').style.display='block';
-  try{localStorage.setItem('psy-mycs',cs)}catch(e){}
+  try{localStorage.setItem('psy-mycs',code)}catch(e){}
 }
 
 /* ── the card ── */
@@ -150,7 +151,7 @@ document.getElementById('dl-card').onclick=function(){
   cardBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='psy-member-card-'+(cs||'m1').replace(/[^A-Za-z0-9-]/g,'')+'.png';a.click();});
 };
 document.getElementById('sh-card').onclick=function(){
-  var link='https://party.psyoptin.com/?r='+encodeURIComponent(cs||'');
+  var link='https://party.psyoptin.com/?r='+encodeURIComponent((cs||'').slice(-7).toUpperCase());
   var txt='Enrolled. Rank: MEMBER ONE — there is no Member Two. Every trick disclosed: '+link;
   cardBlob(function(b){
     var file=new File([b],'psy-member-card.png',{type:'image/png'});
