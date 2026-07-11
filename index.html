@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>P.S.Y. — The Party of One</title>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="%230B1B33"/><path d="M38 40 L162 40 L100 152 Z" fill="%238C4CBF" stroke="%238C4CBF" stroke-width="6"/><text x="100" y="118" text-anchor="middle" fill="%23B98900" font-family="Georgia" font-size="72" font-weight="bold">1</text></svg>'>
 <meta name="description" content="P.S.Y. (Psychological Strategic Yield) — the only political party honest about what political parties are. Satire, performance art, and disclosed influence. Join free. Consent collected, not assumed.">
 <meta property="og:title" content="P.S.Y. — The Party of One">
 <meta property="og:description" content="The only political party honest about what political parties are. Every party pulls the strings. We label them.">
@@ -52,6 +53,30 @@ nav a.lnk:hover{opacity:1;color:var(--red)}
 .hero .motto{font-size:clamp(19px,3vw,26px);font-style:italic;max-width:640px;margin:26px auto 8px;color:var(--cream2)}
 .hero .sub{font-size:15px;color:rgba(246,241,231,.72);max-width:560px;margin:0 auto}
 .hero-ctas{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.hero-phone{margin:20px auto 0;max-width:520px;font-size:15.5px;color:rgba(246,241,231,.88);position:relative;z-index:1}
+.hero-phone a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold)}
+.hero-phone b{color:var(--gold)}
+/* recruitment ladder */
+.recruitsec{background:var(--cream);color:var(--navy)}
+.rungs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:30px 0 26px}
+.rung{border:2px solid var(--navy);padding:18px 18px 16px;background:#fff}
+.rung b{display:block;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.rung span{display:block;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:19px;font-weight:900;margin:6px 0 4px}
+.rung i{font-size:14px;color:rgba(11,27,51,.65)}
+.rung.hot{border-color:var(--purple);box-shadow:5px 5px 0 var(--purple)}
+.mystring{border:2px dashed var(--navy);padding:22px;background:rgba(255,255,255,.6)}
+.mystring label{display:block;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;color:rgba(11,27,51,.7)}
+.mystring .rowx{display:flex;gap:10px;flex-wrap:wrap}
+.mystring input{flex:1;min-width:160px;padding:12px 14px;border:2px solid var(--navy);font:inherit;font-size:16px;letter-spacing:.08em;text-transform:uppercase;background:#fff}
+.mystring button{padding:12px 20px;border:2px solid var(--navy);background:var(--navy);color:var(--cream);font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.mystring button:hover{background:var(--purple);border-color:var(--purple)}
+#stringOut{margin-top:14px}
+#stringOut code{display:block;padding:12px 14px;background:var(--navy);color:var(--gold);font-size:14px;word-break:break-all;margin-bottom:10px}
+.mystring .fine{margin-top:12px;font-size:13px;color:rgba(11,27,51,.6)}
+.found-line{margin-top:14px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.recent-line{margin-top:8px;font-size:13.5px;color:rgba(246,241,231,.7)}
+.recent-line em{color:var(--gold);font-style:normal}
+.refband{margin:18px 0 0;padding:12px 16px;border:2px solid var(--purple);background:rgba(140,76,191,.1);font-size:14.5px}
 .btn{display:inline-block;padding:15px 34px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:2px solid transparent}
 .btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#a5241e}
 .btn-ghost{border-color:var(--cream);color:var(--cream)}.btn-ghost:hover{border-color:var(--purple);color:#d9c2f2}
@@ -303,8 +328,10 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   <p class="sub" id="hero-sub">The acronym stands for whatever it needs to. Currently: Psychological Strategic Yield. This is disclosed, like everything else.</p>
   <div class="hero-ctas">
     <a class="btn btn-red" href="#join" id="cta-join">Join the Party — Free</a>
+    <a class="btn btn-ghost" href="#recruit" id="cta-recruit">Don't Join — Recruit</a>
     <a class="btn btn-ghost" href="#inner" id="cta-inner">Get Psyoped — Paid</a>
   </div>
+  <p class="hero-phone">The campaign runs a live switchboard. <a href="tel:+12515014159">Call <b>+1 (251) 501-4159</b> and say <b>PARTY</b></a> — five rooms, every trick performed and then confessed. First call's on the machine.</p>
   <div class="paidfor">Ad paid for by Psy-Opt-In · Consent NOT assumed by continued viewing — we collect it properly below</div>
 </header>
 
@@ -445,6 +472,29 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
   </div>
 </section>
 
+<!-- RECRUITMENT LADDER -->
+<section class="recruitsec" id="recruit">
+  <div class="wrap">
+    <div class="kicker">The Recruitment Ladder</div>
+    <h2>Don't join. <span style="color:var(--red)">Recruit.</span></h2>
+    <p class="lede">Joining takes a minute, so the real sport is enrolling <em>others</em>. Every member holds a personal line, and every enrollment through it goes on your file — tallied honestly on the ledger, confirmed by the Handler at each rung. This is ⟳ Commitment Momentum and ◎ Consensus Pull aimed outward and fully labeled: the only recruitment pyramid that admits it's a pyramid. It's on the logo.</p>
+    <div class="rungs">
+      <div class="rung"><b>1 recruit</b><span>STRING-PULLER</span><i>you have felt the handle turn</i></div>
+      <div class="rung hot"><b>3 recruits</b><span>INNER PARTY STANDING</span><i>the party begins listening to you. Warily.</i></div>
+      <div class="rung"><b>10 recruits</b><span>CELL LEADER</span><i>your city cell is declared — secret meetings for a completely open party</i></div>
+    </div>
+    <div class="mystring">
+      <label for="myCS">Your designation (M1-XXXX — it's in your welcome email and on your membership card)</label>
+      <div class="rowx"><input id="myCS" placeholder="M1-85EF" maxlength="7" autocomplete="off"><button type="button" onclick="makeString()">Forge my string</button></div>
+      <div id="stringOut" style="display:none">
+        <code id="stringUrl"></code>
+        <div class="rowx"><button type="button" onclick="copyString()">Copy the string</button><button type="button" onclick="shareString()">Pull it on someone</button></div>
+      </div>
+      <p class="fine">Not enrolled yet? The string only counts if it's yours — <a href="#join">join first</a>, designation arrives instantly. Fabricating recruits is an Other Parties move.</p>
+    </div>
+  </div>
+</section>
+
 <!-- PARTY ROLL -->
 <section class="rollsec" id="roll">
   <div class="wrap-wide">
@@ -452,6 +502,8 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
     <h2>The tribe, on the record.</h2>
     <p class="lede">This is The Crowd (◎ Consensus Pull) — and per house rules, it comes with a label and without inflation. The number below is the real enrollment count, live from the membership ledger. Members appear here only if they opt in, by alias or designation, never by contact info.</p>
     <div style="margin-top:30px" class="roll-count"><span id="roll-n">—</span><small id="roll-cap">members enrolled</small></div>
+    <div class="found-line" id="found-line" style="display:none">Founding seats claimed: <span id="found-n">—</span> of <span id="found-cap">100</span> — <span id="found-left"></span> remain. The first hundred hold the designation forever; it is never reissued.</div>
+    <div class="recent-line" id="recent-line" style="display:none"></div>
     <div class="order-strip" id="order-strip" style="display:none">
       <div class="oh">This Week's Standing Order — <span id="order-no"></span></div>
       <div class="ot" id="order-title"></div>
@@ -483,6 +535,8 @@ footer .legal{max-width:1080px;margin:36px auto 0;padding-top:22px;border-top:1p
     <form class="join-form" name="join" method="POST" action="/welcome.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="join">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <input type="hidden" name="ref" id="jref">
+      <p class="refband" id="refband" style="display:none">You arrived on someone's string — recruiter <b id="refcs"></b> collects the credit the moment you enroll. The mechanic is disclosed, per house style. Notice that it worked anyway.</p>
       <div class="jf-row">
         <label for="jname" id="l-name">Name or Alias (optional — the party respects a good alias)</label>
         <input type="text" id="jname" name="name" placeholder="Citizen Obvious">
@@ -628,6 +682,7 @@ document.querySelector('form.join-form').addEventListener('submit',function(e){
   var body={
     name:el['name'].value.trim(),email:el['email'].value.trim(),role:el['role'].value,
     consent:el['consent'].checked?'explicit-opt-in':'',listed:el['listed'].checked,
+    ref:el['ref'].value,
     lang:(function(){try{return localStorage.getItem('psy-lang')||'en'}catch(e){return 'en'}})(),
     userAgent:navigator.userAgent,'bot-field':el['bot-field'].value
   };
@@ -635,7 +690,8 @@ document.querySelector('form.join-form').addEventListener('submit',function(e){
   .then(function(r){return r.json()})
   .then(function(d){
     if(d.ok){
-      location.href='welcome.html?cs='+encodeURIComponent(d.callsign||'')+'&cell='+encodeURIComponent(d.cell||'')+'&a='+encodeURIComponent(body.name||'')+'&m='+(d.members||'');
+      try{localStorage.setItem('psy-mycs',d.callsign||'')}catch(e){}
+      location.href='welcome.html?cs='+encodeURIComponent(d.callsign||'')+'&cell='+encodeURIComponent(d.cell||'')+'&a='+encodeURIComponent(body.name||'')+'&m='+(d.members||'')+'&f='+(d.founding||0);
     }else{
       err.textContent=d.error||'Something went wrong — try again.';err.style.display='block';
       btn.disabled=false;btn.textContent='Enroll Me — Member One';
@@ -644,9 +700,61 @@ document.querySelector('form.join-form').addEventListener('submit',function(e){
   .catch(function(){ HTMLFormElement.prototype.submit.call(f); }); // network down → Netlify Forms fallback (bypasses this handler)
 });
 
+/* ── recruitment strings: ?r= capture + personal-line forge ── */
+(function(){
+  var CS_RE=/^M1-[0-9A-F]{4}$/;
+  var r=(new URLSearchParams(location.search).get('r')||'').toUpperCase().trim();
+  if(!CS_RE.test(r)){ try{r=(localStorage.getItem('psy-ref')||'')}catch(e){r=''} }
+  if(CS_RE.test(r)){
+    try{localStorage.setItem('psy-ref',r)}catch(e){}
+    document.getElementById('jref').value=r;
+    document.getElementById('refcs').textContent=r;
+    document.getElementById('refband').style.display='block';
+  }
+  // prefill the forge with the visitor's own designation if they joined here before
+  try{var mine=localStorage.getItem('psy-mycs');if(mine&&CS_RE.test(mine))document.getElementById('myCS').value=mine;}catch(e){}
+})();
+function stringURL(){
+  var cs=(document.getElementById('myCS').value||'').toUpperCase().trim();
+  if(!/^M1-[0-9A-F]{4}$/.test(cs))return null;
+  return 'https://party.psyoptin.com/?r='+cs;
+}
+function makeString(){
+  var u=stringURL();
+  if(!u){alert('Designations look like M1-85EF — four letters/digits after M1-. It\'s in your welcome email.');return}
+  document.getElementById('stringUrl').textContent=u;
+  document.getElementById('stringOut').style.display='block';
+}
+function copyString(){
+  var u=stringURL();if(!u)return;
+  (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){
+    document.getElementById('stringUrl').textContent=u+'  ✓ copied';
+  }).catch(function(){ prompt('Copy your string:',u); });
+}
+function shareString(){
+  var u=stringURL();if(!u)return;
+  var txt='I joined a political party whose logo is a pyramid that admits it\'s a pyramid. Every trick, disclosed. You\'d last five minutes: '+u;
+  if(navigator.share){navigator.share({title:'P.S.Y. — The Party of One',text:txt,url:u}).catch(function(){})}
+  else{copyString()}
+}
+
 /* ── party roll: honest live count + opt-in roster ── */
 fetch(API+'/party-roll').then(function(r){return r.json()}).then(function(d){
   document.getElementById('roll-n').textContent=(d.members||0).toLocaleString();
+  if(d.founding&&d.founding.claimed>0){
+    document.getElementById('found-n').textContent=d.founding.claimed;
+    document.getElementById('found-cap').textContent=d.founding.cap;
+    document.getElementById('found-left').textContent=d.founding.left;
+    document.getElementById('found-line').style.display='block';
+  }
+  if(d.recent&&d.recent.length){
+    var rel=function(iso){var s=(Date.now()-new Date(iso))/1000;if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago'};
+    document.getElementById('recent-line').innerHTML='LATEST ENROLLMENTS: '+d.recent.slice(0,4).map(function(e){
+      var div=document.createElement('div');div.textContent=e.alias||'Member One';
+      return '<em>'+div.innerHTML+'</em> ('+rel(e.at)+')';
+    }).join(' · ');
+    document.getElementById('recent-line').style.display='block';
+  }
   if(d.order){
     document.getElementById('order-no').textContent='№ '+d.order.number;
     document.getElementById('order-title').textContent=d.order.title;

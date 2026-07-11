@@ -5,23 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Welcome, Member One — P.S.Y.</title>
 <meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" fill="%230B1B33"/><path d="M38 40 L162 40 L100 152 Z" fill="%238C4CBF" stroke="%238C4CBF" stroke-width="6"/><text x="100" y="118" text-anchor="middle" fill="%23B98900" font-family="Georgia" font-size="72" font-weight="bold">1</text></svg>'>
 <style>
 :root{--navy:#0B1B33;--navy2:#0F2547;--red:#C8322B;--cream:#F6F1E7;--gold:#B98900;--purple:#8C4CBF}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 20px;line-height:1.6}
-.cardw{max-width:640px;text-align:center}
-.emblem{width:110px;height:110px;margin:0 auto 22px;display:block}
+body{background:linear-gradient(180deg,var(--navy),var(--navy2));color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:34px 20px 60px;line-height:1.6}
+.cardw{max-width:680px;text-align:center}
+.emblem{width:96px;height:96px;margin:0 auto 18px;display:block}
 .kicker{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-h1{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:clamp(30px,6vw,46px);font-weight:900;line-height:1.1;margin-bottom:18px}
+h1{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:clamp(28px,6vw,42px);font-weight:900;line-height:1.1;margin-bottom:14px}
 h1 span{color:var(--red)}
-p{font-size:17px;color:rgba(246,241,231,.85);margin-bottom:14px}
-.assignment{margin:28px 0;border:1px solid rgba(246,241,231,.25);border-left:5px solid var(--purple);padding:22px 24px;text-align:left;background:rgba(15,37,71,.5)}
+p{font-size:16.5px;color:rgba(246,241,231,.85);margin-bottom:12px}
+.assignment{margin:24px 0;border:1px solid rgba(246,241,231,.25);border-left:5px solid var(--purple);padding:20px 22px;text-align:left;background:rgba(15,37,71,.5)}
 .assignment .h{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
-.assignment p{font-size:16px;margin:0}
-a.btn{display:inline-block;margin:8px 6px 0;padding:13px 28px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--cream);border:2px solid var(--cream)}
-a.btn:hover{border-color:var(--purple);color:#d9c2f2}
-a.btn.red{background:var(--red);border-color:var(--red);color:#fff}
-.fine{margin-top:26px;font-size:12.5px;color:rgba(246,241,231,.5)}
+.assignment p{font-size:15.5px;margin:0}
+a.btn,button.btn{display:inline-block;margin:8px 6px 0;padding:13px 26px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--cream);border:2px solid var(--cream);background:transparent;cursor:pointer}
+a.btn:hover,button.btn:hover{border-color:var(--purple);color:#d9c2f2}
+a.btn.red,button.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+a.btn.gold,button.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.fine{margin-top:24px;font-size:12.5px;color:rgba(246,241,231,.5)}
+#cardbox{margin:22px auto 6px;max-width:400px}
+#membercard{width:100%;height:auto;border:1px solid rgba(185,137,0,.55);box-shadow:0 18px 50px rgba(0,0,0,.5);display:block}
+.stringbox{margin:24px 0;border:2px dashed rgba(185,137,0,.6);padding:18px 20px;text-align:left}
+.stringbox .h{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.stringbox code{display:block;background:rgba(0,0,0,.35);color:var(--gold);padding:10px 12px;font-size:13.5px;word-break:break-all;margin:8px 0 4px}
+.stringbox p{font-size:14.5px;margin-bottom:4px}
+.founding-strip{margin:14px auto 0;display:inline-block;background:var(--red);color:#fff;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;padding:8px 18px}
 </style>
 </head>
 <body>
@@ -33,39 +42,133 @@ a.btn.red{background:var(--red);border-color:var(--red);color:#fff}
   </svg>
   <div class="kicker" id="kick">Enrollment Confirmed</div>
   <h1 id="head">Welcome, <span>Member One</span>.</h1>
-  <p id="body1">You now hold the party's only rank. There is no Member Two, so congratulations on reaching the top. The costume is yours; the label is sewn on the outside, as required.</p>
-  <div class="assignment" id="idcard" style="display:none;border-left-color:#B98900">
-    <div class="h" style="color:#B98900">Party Identification — issued, not earned</div>
-    <p style="font-family:-apple-system,'Segoe UI',Arial,sans-serif"><strong id="id-cs" style="font-size:19px"></strong><br>
-    <span id="id-cell" style="opacity:.85"></span><br>
-    <span style="opacity:.7;font-size:14px">Rank: MEMBER ONE · Your designation is deterministic — rejoin a thousand times, it's still yours.</span></p>
+  <p id="body1">You now hold the party's only rank. There is no Member Two, so congratulations on reaching the top.</p>
+  <div id="foundwrap" style="display:none"><span class="founding-strip" id="foundstrip"></span></div>
+
+  <!-- the shareable membership card -->
+  <div id="cardsec" style="display:none">
+    <div id="cardbox"><canvas id="membercard" width="1080" height="1350"></canvas></div>
+    <button class="btn gold" id="dl-card">Download your card</button>
+    <button class="btn" id="sh-card">Post it — recruit by existing</button>
+    <p class="fine" style="margin-top:10px">Posting your card is ✦ Identity Hooks doing free labor for the party. We disclose that. It's still an excellent card.</p>
   </div>
-  <p id="mailnote" style="display:none;font-size:15px">Your papers are also in your inbox — the Handler has written to you. (Check spam once; command it "not spam" and it will obey forever.)</p>
+
+  <!-- the personal recruitment string -->
+  <div class="stringbox" id="stringsec" style="display:none">
+    <div class="h">Don't join — recruit. (You already joined. It's the only move left.)</div>
+    <p>Your personal line. Enrollments through it go on your file: <b>1 = String-Puller · 3 = Inner Party standing · 10 = Cell Leader</b>. The Handler confirms each rung by email.</p>
+    <code id="mystring"></code>
+    <button class="btn" id="cp-string">Copy</button>
+    <button class="btn" id="sh-string">Pull it on someone</button>
+  </div>
+
+  <p id="mailnote" style="display:none;font-size:15px">The Handler has written to you — your papers, your string, and your standing orders schedule are in your inbox. (Check spam once; command it "not spam" and it will obey forever.) <b>Your first weekly Standing Order arrives Monday.</b></p>
+
   <div class="assignment" id="assign">
-    <div class="h">First Standing Order</div>
+    <div class="h">First Standing Order — active immediately</div>
     <p>Today, notice <strong>one</strong> attempt to influence you — an ad, a headline, a guilt trip, a limited-time offer. Don't resist it. Just see the string. That's the entire assignment. That's the entire party.</p>
   </div>
-  <a class="btn red" href="https://psyoptin.com">Train at the Temple</a>
-  <a class="btn" href="tel:+12515014159">Call The Line</a>
+
+  <div class="assignment" style="border-left-color:var(--red)">
+    <div class="h" style="color:#e88a84">Next step — the reason the party exists</div>
+    <p>The party notices strings. <a href="https://psyoptin.com" style="color:var(--gold)"><b>The Training Temple teaches you to cut them</b></a> — six simulated worlds, a live scam phone line, an AI that runs game on you until nothing runs on you. Free tier open now.</p>
+  </div>
+
+  <a class="btn red" href="https://psyoptin.com">Enter the Training Temple</a>
+  <a class="btn" href="tel:+12515014159">☎ Call the Party Line — say PARTY</a>
   <a class="btn" href="index.html">Back to the Party</a>
   <p class="fine">Changed your mind already? Perfectly doctrinal. Every email we ever send has a one-click unsubscribe, and the safeword — CUT THE STRINGS — always works.</p>
 </div>
+
 <script>
 var Q=new URLSearchParams(location.search);
-var cs=Q.get('cs'),cell=Q.get('cell'),alias=Q.get('a');
-if(cs){
-  document.getElementById('id-cs').textContent=cs;
-  document.getElementById('id-cell').textContent=cell||'';
-  document.getElementById('idcard').style.display='block';
-  document.getElementById('mailnote').style.display='block';
-  if(alias)document.getElementById('head').innerHTML='Welcome, <span>'+alias.replace(/[<>&"]/g,'')+'</span>.';
-}
-if(new URLSearchParams(location.search).get('from')==='machine'){
+var cs=Q.get('cs'),cell=Q.get('cell'),alias=(Q.get('a')||'').slice(0,40),f=parseInt(Q.get('f')||'0',10)||0;
+function esc(s){return String(s).replace(/[<>&"]/g,'')}
+
+if(Q.get('from')==='machine'){
   document.getElementById('kick').textContent='Briefing Requested';
   document.getElementById('head').innerHTML='Received. <span>Teardown incoming.</span>';
   document.getElementById('body1').textContent='The operator will look at your current digital setup and reply with a short, specific teardown — what’s leaking, what’s missing, what week one fixes. No deck, no discovery-call theater.';
   document.getElementById('assign').style.display='none';
+}else if(cs){
+  if(alias)document.getElementById('head').innerHTML='Welcome, <span>'+esc(alias)+'</span>.';
+  document.getElementById('mailnote').style.display='block';
+  if(f>0){
+    document.getElementById('foundstrip').textContent='★ Founding Member № '+f+' of 100 — held forever, never reissued';
+    document.getElementById('foundwrap').style.display='block';
+  }
+  drawCard(); document.getElementById('cardsec').style.display='block';
+  var link='https://party.psyoptin.com/?r='+encodeURIComponent(cs);
+  document.getElementById('mystring').textContent=link;
+  document.getElementById('stringsec').style.display='block';
+  try{localStorage.setItem('psy-mycs',cs)}catch(e){}
 }
+
+/* ── the card ── */
+function drawCard(){
+  var c=document.getElementById('membercard'),x=c.getContext('2d'),W=1080,H=1350;
+  var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0B1B33');g.addColorStop(1,'#0F2547');
+  x.fillStyle=g;x.fillRect(0,0,W,H);
+  var rg=x.createRadialGradient(W/2,H+150,80,W/2,H+150,900);rg.addColorStop(0,'rgba(140,76,191,.4)');rg.addColorStop(1,'rgba(140,76,191,0)');
+  x.fillStyle=rg;x.fillRect(0,0,W,H);
+  x.strokeStyle='#B98900';x.lineWidth=5;x.strokeRect(42,42,W-84,H-84);
+  x.strokeStyle='rgba(246,241,231,.35)';x.lineWidth=1.5;x.strokeRect(58,58,W-116,H-116);
+  // emblem
+  var cx=W/2,cy=300;
+  x.strokeStyle='#B98900';x.lineWidth=6;x.beginPath();x.arc(cx,cy,150,0,7);x.stroke();
+  x.strokeStyle='rgba(246,241,231,.4)';x.lineWidth=2;x.beginPath();x.arc(cx,cy,136,0,7);x.stroke();
+  x.beginPath();x.moveTo(cx-96,cy-88);x.lineTo(cx+96,cy-88);x.lineTo(cx,cy+82);x.closePath();
+  x.fillStyle='rgba(140,76,191,.28)';x.fill();x.strokeStyle='#8C4CBF';x.lineWidth=9;x.lineJoin='round';x.stroke();
+  x.fillStyle='#B98900';x.font='bold 96px Georgia';x.textAlign='center';x.fillText('1',cx,cy+8);
+  // headers
+  x.fillStyle='#B98900';x.font='800 34px Arial';x.fillText('P . S . Y .',cx,530);
+  x.fillStyle='rgba(246,241,231,.75)';x.font='24px Arial';x.fillText('P S Y C H O L O G I C A L   S T R A T E G I C   Y I E L D',cx,572);
+  x.fillStyle='rgba(246,241,231,.55)';x.font='italic 26px Georgia';x.fillText('The Party of One',cx,614);
+  x.strokeStyle='rgba(185,137,0,.6)';x.lineWidth=2;x.beginPath();x.moveTo(180,660);x.lineTo(W-180,660);x.stroke();
+  x.fillStyle='#8C4CBF';x.font='800 26px Arial';x.fillText('P A R T Y   I D E N T I F I C A T I O N',cx,716);
+  // holder
+  var nm=alias||'Member One';
+  x.fillStyle='#F6F1E7';x.font='900 '+(nm.length>16?54:72)+'px Arial';x.fillText(nm,cx,806);
+  x.fillStyle='#B98900';x.font='bold 52px Georgia';x.fillText(cs||'',cx,886);
+  x.fillStyle='rgba(246,241,231,.8)';x.font='30px Arial';x.fillText((cell||'').toUpperCase(),cx,938);
+  x.fillStyle='rgba(246,241,231,.65)';x.font='italic 28px Georgia';
+  x.fillText('Rank: MEMBER ONE — there is no Member Two',cx,996);
+  if(f>0){
+    x.fillStyle='#C8322B';x.fillRect(190,1040,W-380,72);
+    x.fillStyle='#fff';x.font='800 30px Arial';
+    x.fillText('★  FOUNDING MEMBER № '+f+' OF 100  ★',cx,1088);
+  }
+  x.fillStyle='rgba(246,241,231,.6)';x.font='26px Arial';
+  x.fillText('Every trick disclosed · Safeword: CUT THE STRINGS',cx,f>0?1180:1120);
+  x.fillStyle='#B98900';x.font='800 30px Arial';
+  x.fillText('party.psyoptin.com',cx,f>0?1236:1180);
+  x.fillStyle='rgba(246,241,231,.4)';x.font='22px Arial';
+  x.fillText('Consent on file. Obviously.',cx,f>0?1282:1230);
+}
+function cardBlob(cb){document.getElementById('membercard').toBlob(cb,'image/png')}
+document.getElementById('dl-card').onclick=function(){
+  cardBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='psy-member-card-'+(cs||'m1').replace(/[^A-Za-z0-9-]/g,'')+'.png';a.click();});
+};
+document.getElementById('sh-card').onclick=function(){
+  var link='https://party.psyoptin.com/?r='+encodeURIComponent(cs||'');
+  var txt='Enrolled. Rank: MEMBER ONE — there is no Member Two. Every trick disclosed: '+link;
+  cardBlob(function(b){
+    var file=new File([b],'psy-member-card.png',{type:'image/png'});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],text:txt}).catch(function(){})}
+    else if(navigator.share){navigator.share({text:txt,url:link}).catch(function(){})}
+    else{prompt('Copy this, attach your downloaded card:',txt)}
+  });
+};
+document.getElementById('cp-string').onclick=function(){
+  var t=document.getElementById('mystring').textContent;
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){document.getElementById('cp-string').textContent='✓ Copied';}).catch(function(){prompt('Copy your string:',t)});
+};
+document.getElementById('sh-string').onclick=function(){
+  var t=document.getElementById('mystring').textContent;
+  var txt='I joined a political party whose logo is a pyramid that admits it’s a pyramid. You’d last five minutes: '+t;
+  if(navigator.share){navigator.share({title:'P.S.Y. — The Party of One',text:txt,url:t}).catch(function(){})}
+  else{(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).catch(function(){prompt('Copy:',txt)})}
+};
 </script>
 </body>
 </html>
