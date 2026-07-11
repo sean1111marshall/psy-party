@@ -1,0 +1,10 @@
+.env
+.env.*
+*.local
+deploy.zip
+*.pem
+*.key
+.project-history/
+OWNER-MASTER-KEYS.md
+MY-PASSCODES.txt
+MY-CODES.txt
