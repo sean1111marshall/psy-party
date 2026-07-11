@@ -703,7 +703,10 @@ document.querySelector('form.join-form').addEventListener('submit',function(e){
 /* ── recruitment strings: ?r= capture + personal-line forge ── */
 (function(){
   var CS_RE=/^M1-[0-9A-F]{4}$/;
-  var r=(new URLSearchParams(location.search).get('r')||'').toUpperCase().trim();
+  // extract M1-XXXX from anywhere in the param — tolerant of long designations
+  var raw=(new URLSearchParams(location.search).get('r')||'').toUpperCase();
+  var mm=raw.match(/M1-[0-9A-F]{4}/);
+  var r=mm?mm[0]:'';
   if(!CS_RE.test(r)){ try{r=(localStorage.getItem('psy-ref')||'')}catch(e){r=''} }
   if(CS_RE.test(r)){
     try{localStorage.setItem('psy-ref',r)}catch(e){}
