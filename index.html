@@ -907,5 +907,28 @@ function shareTo(net,text,url){
   });
 })();
 </script>
+<script>
+/* the knock — the back room answers to those who say the word where the
+   party can hear them typing. desktop: type STRINGS anywhere. mobile: tap
+   the P.S.Y. mark seven times. no visible link exists on purpose. */
+(function(){
+  const open = () => { sessionStorage.setItem("psy_knock","1"); location.href = "/backroom.html"; };
+  let buf = "";
+  addEventListener("keydown", (e) => {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (!e.key || e.key.length !== 1) return;
+    buf = (buf + e.key.toUpperCase()).slice(-7);
+    if (buf === "STRINGS") open();
+  });
+  let taps = 0, tapT = 0;
+  const mark = document.querySelector(".nav-mark");
+  if (mark) mark.addEventListener("click", (e) => {
+    const now = Date.now();
+    taps = (now - tapT < 1600) ? taps + 1 : 1;
+    tapT = now;
+    if (taps >= 7) { e.preventDefault(); open(); }
+  });
+})();
+</script>
 </body>
 </html>
